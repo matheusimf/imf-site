@@ -1,0 +1,710 @@
+{% load i18n %}
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<title>{% trans 'IMF'%}</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	<link href="{% static 'core/css/base.css' %}" rel="stylesheet" />
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+	<link href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
+	<link href="{% static 'assets/plugins/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" />
+	<link href="{% static 'assets/css/animate.min.css' %}" rel="stylesheet" />
+	<link href="{% static 'assets/css/style.min.css' %}" rel="stylesheet" />
+	<link href="{% static 'assets/css/style-responsive.min.css' %}" rel="stylesheet" />
+	<link href="{% static 'assets/css/theme/default.css' %}" id="theme" rel="stylesheet" />
+	<!-- ================== END BASE CSS STYLE ================== -->
+</head>
+<body data-spy="scroll" data-target="#header-navbar" data-offset="51">
+    <!-- begin #page-container -->
+    <div id="page-container" class="fade">
+        <!-- begin #header -->
+        <div id="header" class="header navbar navbar-default navbar-fixed-top">
+            <!-- begin container -->
+            <div class="container">
+                <!-- begin navbar-header -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#home" data-click="scroll-to-target" class="navbar-brand">
+                        <span class="brand-logo main-header">
+                            <img class="logo-image" src="{% static 'core/img/imf_logo.png' %}" alt="Home" />
+                        </span>
+                        <span class="text-imf">IMF - Desenvolvimento Humano, Pessoal e Profissional</span>
+                    </a>
+                </div>
+                <!-- end navbar-header -->
+                <!-- begin navbar-collapse -->
+                <div class="collapse navbar-collapse" id="header-navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active dropdown"><a href="#home" data-click="scroll-to-target">HOME</a></li>
+                        <li><a href="#about" data-click="scroll-to-target">{% trans 'SOBRE NÓS' %}</a></li>
+                        <li><a href="#team" data-click="scroll-to-target">{% trans 'TIME' %}</a></li>
+                        <li><a href="#service" data-click="scroll-to-target">{% trans 'SERVIÇOS' %}</a></li>
+                        <li><a href="#work" data-click="scroll-to-target">{% trans 'CURSOS' %}</a></li>
+                        <li><a href="#client" data-click="scroll-to-target">{% trans 'CLIENTES' %}</a></li>
+                        <li><a href="#contact" data-click="scroll-to-target">{% trans 'CONTATO' %}</a></li>
+                    </ul>
+                </div>
+                <!-- end navbar-collapse -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #header -->
+        
+        <!-- begin #home -->
+        <div id="home" class="content has-bg home">
+            <!-- begin content-bg -->
+            <div class="content-bg">
+                <!-- <img src="{% static 'assets/img/home-bg.jpg' %}" alt="Home" /> -->
+                <img class="main-image" src="{% static 'core/img/dna_main_image.jpg' %}" alt="Home" />
+            </div>
+            <!-- end content-bg -->
+            <!-- begin container -->
+            <div class="container home-content">
+                <h1>Instituto Moreno Figueiredo</h1>
+                <h3>Desenvolvimento Humano, Pessoal e Profissional</h3>
+                <h5>Ajudando pessoas e empresas a alcançar seus objetivos, sonhos e a vida que desejam ter</h5>
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #home -->
+        
+        <!-- begin #about -->
+        <div id="about" class="content" data-scrollview="true">
+            <!-- begin container -->
+            <div class="container" data-animation="true" data-animation-type="fadeInDown">
+                <h2 class="content-title">{% trans 'Sobre Nós' %}</h2>
+                <p class="content-desc">
+                    {% trans 'O IMF tem como objetivo trazer à consciência das pessoas que elas estão no comando de suas vidas e que podem criar sua realidade de acordo com sua própria vontade.' %}
+                </p>
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-6">
+                        <!-- begin about -->
+                        <div class="about">
+                            <h3>{% trans 'Nossa História' %}</h3>
+                            <p>
+                                Criado com o intuito de ajudar as pessoas do Brasil e de todo o mundo a ter a vida que tanto sonharam, livre de doenças, livre de problemas, vivendo bem com sua família e amigos e conseguindo a estabilidade financeira e profissional que tanto sonham.
+                            </p>
+                            <p>
+                                O instituto faz isto com profissionais que possuem diferentes habilidades e recursos que abdicaram de suas carreiras principais para poder ajudar outras pessoas a encontrar o melhor caminho para suas vidas através de terapias de desenvolvimento humano.
+                            </p>
+                        </div>
+                        <!-- end about -->
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-6">
+                        <h3>{% trans 'Nossa Filosofia' %}</h3>
+                        <!-- begin about-author -->
+                        <div class="about-author">
+                            <div class="quote bg-silver">
+                                <i class="fa fa-quote-left"></i>
+                                <h3><span>{% trans 'Buscamos ajudar as pessoas a ter a vida que realmente desejam' %}</span></h3>
+                                <i class="fa fa-quote-right"></i>
+                            </div>
+                            <div class="author">
+                                <div class="image">
+                                    <img class="mini-image" src="{% static 'core/img/matheus_figueiredo.jpeg' %}" alt="Matheus Figueiredo" />
+                                </div>
+                                <div class="info">
+                                    Matheus Figueiredo
+                                    <small>{% trans 'Fundador e Instrutor' %}</small>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end about-author -->
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-12">
+                        <h3>{% trans 'Nossa Experiência' %}</h3>
+                        <p>{% trans 'Trabalhamos com terapias mundialmente conhecidas como ThetaHealing® e Access Consciousness®.' %}</p>
+                        <p>{% trans 'Ministramos inúmeros cursos destas terapias em vários lugares do Brasil e do mundo. Como por exemplo "Barras de Access" de Access Consciousness®, e mais de 15 cursos de ThetaHealing®, que podem ser vistos aqui.' %}</p>
+                        <p>{% trans 'Nossos terapeutas também viajam o mundo para traduzir alguns cursos destas técnicas, ajudando pessoas que não dominam o idioma inglês a ter acesso a estas informações.' %}</p>
+                    </div>
+                    <!-- end col-4 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #about -->
+    
+        <!-- begin #milestone -->
+        <div id="milestone" class="content bg-black-darker has-bg" data-scrollview="true">
+            <!-- begin content-bg -->
+            <div class="content-bg">
+                <img src="{% static 'assets/img/milestone-bg.jpg' %}" alt="Milestone" />
+            </div>
+            <!-- end content-bg -->
+            <!-- begin container -->
+            <div class="container">
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-3 milestone-col">
+                        <div class="milestone">
+                            <div class="number" data-animation="true" data-animation-type="number" data-final-number="12">2</div>
+                            <div class="title">{% trans 'Número de sedes' %}</div>
+                        </div>
+                    </div>
+                    <!-- end col-3 -->
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-3 milestone-col">
+                        <div class="milestone">
+                            <div class="number" data-animation="true" data-animation-type="number" data-final-number="71">71</div>
+                            <div class="title">{% trans 'Cursos Ministrados' %}</div>
+                        </div>
+                    </div>
+                    <!-- end col-3 -->
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-3 milestone-col">
+                        <div class="milestone">
+                            <div class="number" data-animation="true" data-animation-type="number" data-final-number="299">299</div>
+                            <div class="title">{% trans 'Alunos Formados' %}</div>
+                        </div>
+                    </div>
+                    <!-- end col-3 -->
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-3 milestone-col">
+                        <div class="milestone">
+                            <div class="number" data-animation="true" data-animation-type="number" data-final-number="14">14</div>
+                            <div class="title">{% trans 'Cursos Traduzidos' %}</div>
+                        </div>
+                    </div>
+                    <!-- end col-3 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #milestone -->
+        
+        <!-- begin #team -->
+        <div id="team" class="content" data-scrollview="true">
+            <!-- begin container -->
+            <div class="container">
+                <h2 class="content-title">{% trans 'Nosso Time' %}</h2>
+                <p class="content-desc">
+                    Uma equipe de profissionais de diferentes áreas prontos para ajudar sua empresa, sua família e a você mesmo
+                </p>
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <!-- begin team -->
+                        <div class="team">             
+                            <div class="image" data-animation="true" data-animation-type="flipInX">
+                                <img class="mini-image" src="{% static 'core/img/matheus_figueiredo.jpeg' %}" alt="Matheus Figueiredo" />
+                            </div>
+                            <div class="info">
+                                <h3 class="name">Matheus Figueiredo</h3>
+                                <div class="title text-theme">{% trans 'Fundador e Instrutor' %}</div>
+                                <p>{% trans 'Com experiência em Mercados Financeiros, Consultorias e Programação de Computadores atualmente utiliza seus conhecimentos para levar as pessoas à melhor versão delas mesmas' %}</p>
+                                <div class="social">
+                                    <a href="https://www.facebook.com/matheus.imfterapias" target="_blank"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+                                    <a href="https://www.instagram.com/matheusimfterapias/" target="_blank"><i class="fa fa-instagram fa-lg fa-fw"></i></a>
+                                </div>
+                            </div>                     
+                        </div>
+                        <!-- end team -->
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <!-- begin team -->
+                        <div class="team">             
+                            <div class="image" data-animation="true" data-animation-type="flipInX">
+                                <img class="mini-image" src="{% static 'core/img/carolina_alves.jpg' %}" alt="Carolina Alves" />
+                            </div>
+                            <div class="info">
+                                <h3 class="name">Carolina Alves</h3>
+                                <div class="title text-theme">{% trans 'Fundadora e Instrutora' %}</div>
+                                <p>{% trans 'Com formação em Administração e Marketing Digital utiliza todo seu pensamento lógico e criatividade no dia-a-dia da empresa e para ajudar seus pacientes' %}</p>
+                                <div class="social">
+                                    <a href="https://www.facebook.com/carolina.terapia" target="_blank"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+                                    <a href="https://www.instagram.com/carolimfterapias/" target="_blank"><i class="fa fa-instagram fa-lg fa-fw"></i></a>
+                                </div>
+                            </div>                     
+                        </div>
+                        <!-- end team -->
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <!-- begin team -->
+                        <div class="team">             
+                            <div class="image" data-animation="true" data-animation-type="flipInX">
+                                <img class="mini-image" src="{% static 'core/img/matheus_figueiredo.jpeg' %}" alt="Patricia Pilan" />
+                            </div>
+                            <div class="info">
+                                <h3 class="name">Patrícia Pilan</h3>
+                                <div class="title text-theme">{% trans 'Instrutora e Terapeuta' %}</div>
+                                <p>{% trans 'Cursando o último ano de direito tem um olhar bastante humano para as questões que as pessoas trazem' %}</p>
+                                <div class="social">
+                                    <a href="https://www.facebook.com/matheus.imfterapias" target="_blank"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+                                    <a href="https://www.instagram.com/matheusmf.terapias/" target="_blank"><i class="fa fa-instagram fa-lg fa-fw"></i></a>
+                                </div>
+                            </div>                     
+                        </div>
+                        <!-- end team -->
+                    </div>
+                    <!-- end col-6 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #team -->
+        
+        <!-- begin #quote -->
+        <div id="quote" class="content bg-black-darker has-bg" data-scrollview="true">
+            <!-- begin content-bg -->
+            <div class="content-bg">
+                <img src="{% static 'assets/img/quote-bg.jpg' %}" alt="Quote" />
+            </div>
+            <!-- end content-bg -->
+            <!-- begin container -->
+            <div class="container" data-animation="true" data-animation-type="fadeInLeft">
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-12 -->
+                    <div class="col-md-12 quote">
+                        <i class="fa fa-quote-left"></i>{% trans 'Encontre o que você faria com amor pelos próximos 100 anos tendo todo o dinheiro do mundo que você encontrará um emprego que será um hobbie e não um trabalho!' %}
+                        <i class="fa fa-quote-right"></i>
+                        <small>{% trans 'Matheus Figueiredo, Fundador e Instrutor do IMF' %}</small>
+                    </div>
+                    <!-- end col-12 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #quote -->
+        
+        <!-- beign #service -->
+        <div id="service" class="content" data-scrollview="true">
+            <!-- begin container -->
+            <div class="container">
+                <h2 class="content-title">{% trans 'Nossos Serviços' %}</h2>
+                <p class="content-desc">
+                    {% trans 'Nós utilizamos técnicas de terapias quânticas para ajudar a liberar padrões e crenças limitantes que atrapalham sua vida de se manifestar da maneira que desejar.' %}<br />
+                    {% trans 'As transformações através destas técnicas podem ocorrer em qualquer área, como na alegria, amor, abundância, sucesso e autoconfiança. São indicados para os casos de depressão, fobias e medos, síndrome do pânico, dores físicas, alergias, fibromialgia, enxaqueca, ansiedade e angústia, rinite, distúrbios do sono, estresses e muito mais.' %}
+                </p>
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service">
+                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-hand-o-right"></i></div>
+                            <div class="info">
+                                <h4 class="title">{% trans 'ThetaHealing®' %}</h4>
+                                <p class="desc">{% trans 'A técnica utiliza uma meditação, com o objetivo de treinar sua mente, corpo e espírito para viver a vida com pensamentos positivos, desenvolvendo virtudes e percebendo e recebendo os aprendizados de todas as situações de nossa vida e em tudo o que fazemos.' %}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service">
+                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-hand-o-right"></i></div>
+                            <div class="info">
+                                <h4 class="title">{% trans 'Barras de Access®' %}</h4>
+                                <p class="desc">{% trans 'É uma técnica de 32 pontos na cabeça que ao serem tocados começam a dissipar uma carga eletromagnética presa por pensamentos, sentimentos e emoções. Com esta liberação começamos a ver e acreditar que podemos de fato ter a vida que desejamos.' %}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service">
+                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-hand-o-right"></i></div>
+                            <div class="info">
+                                <h4 class="title">{% trans 'Cursos' %}</h4>
+                                <p class="desc">{% trans 'Trabalhamos com cursos ensinando as pessoas a utilizar algumas das técnicas com as quais trabalhamos. Estes cursos são de Barras de Access® e ThetaHealing®, este último sendo oferecido em vários módulos distintos.' %}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col-4 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #about -->
+        
+        <!-- beign #action-box -->
+        <div id="action-box" class="content has-bg" data-scrollview="true">
+            <!-- begin content-bg -->
+            <div class="content-bg">
+                <img src="{% static 'assets/img/action-bg.jpg' %}" alt="Action" />
+            </div>
+            <!-- end content-bg -->
+            <!-- begin container -->
+            <div class="container" data-animation="true" data-animation-type="fadeInRight">
+                <!-- begin row -->
+                <div class="row action-box">
+                    <!-- begin col-12 -->
+                    <div class="col-md-12 quote">
+                        <i class="fa fa-quote-left"></i>{% trans 'Existe uma forma muito fácil de mudar a vida que a maioria das pessoas ainda não conhece.' %}
+                        <i class="fa fa-quote-right"></i>
+                        <small>{% trans 'Matheus Figueiredo, Fundador e Instrutor do IMF' %}</small>
+                    </div>
+                    <!-- end col-12 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #action-box -->
+        
+        <!-- begin #work -->
+        <div id="work" class="content" data-scrollview="true">
+            <!-- begin container -->
+            <div class="container" data-animation="true" data-animation-type="fadeInDown">
+                <h2 class="content-title">{% trans 'Nossos Cursos' %}</h2>
+                <p class="content-desc">
+                    {% trans 'Abaixo estão os cursos oferecidos por nossos profissionais nas diversas técnicas que trabalhamos' %}
+                </p>
+                <!-- begin row -->
+                <div class="row row-space-10">
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <!-- begin work -->
+                        <div class="work">
+                            <div class="image">
+                                <a href="#work"><img src="{% static 'core/img/dna_basico.jpeg' %}" alt="{% trans 'DNA Básico - ThetaHealing' %}" /></a>
+                            </div>
+                            <div class="desc">
+                                <span class="desc-title">{% trans 'DNA Básico' %}</span>
+                                <span class="desc-text">ThetaHealing®</span>
+                            </div>
+                        </div>
+                        <p class="text-center">{% trans 'ThetaHealing® - DNA Básico' %}</p>
+                        <!-- end work -->
+                    </div>
+                    <!-- end col-3 -->
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <!-- begin work -->
+                        <div class="work">
+                            <div class="image">
+                                <a href="#work"><img src="{% static 'core/img/dna_avancado.jpeg' %}" alt="{% trans 'DNA Avançado - ThetaHealing' %}" /></a>
+                            </div>
+                            <div class="desc">
+                                <span class="desc-title">{% trans 'DNA Avançado' %}</span>
+                                <span class="desc-text">ThetaHealing®</span>
+                            </div>
+                        </div>
+                        <!-- end work -->
+                        <p class="text-center">{% trans 'ThetaHealing® - DNA Avançado' %}</p>
+                    </div>
+                    <!-- end col-3 -->
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <!-- begin work -->
+                        <div class="work">
+                            <div class="image">
+                                <a href="#work"><img src="{% static 'core/img/digging.jpeg' %}" alt="{% trans 'Aprofundando no Digging - ThetaHealing' %}" /></a>
+                            </div>
+                            <div class="desc">
+                                <span class="desc-title">{% trans 'Aprofundando no Digging' %}</span>
+                                <span class="desc-text">ThetaHealing®</span>
+                            </div>
+                        </div>
+                        <!-- end work -->
+                        <p class="text-center">{% trans 'ThetaHealing® - Aprofundando no Digging' %}</p>
+                    </div>
+                    <!-- end col-3 -->
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <!-- begin work -->
+                        <div class="work">
+                            <div class="image">
+                                <a href="#work"><img src="{% static 'core/img/manifestacao_e_abundancia.jpeg' %}" alt="{% trans 'Manifestação e Abundância - ThetaHealing' %}" /></a>
+                            </div>
+                            <div class="desc">
+                                <span class="desc-title">{% trans 'Manifestação e Abundância' %}</span>
+                                <span class="desc-text">ThetaHealing®</span>
+                            </div>
+                        </div>
+                        <!-- end work -->
+                        <p class="text-center">{% trans 'ThetaHealing® - Manifestação e Abundância' %}</p>
+                    </div>
+                    <!-- end col-3 -->
+                </div>
+                <!-- end row -->
+                <!-- begin row -->
+                <div class="row row-space-10">
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <!-- begin work -->
+                        <div class="work">
+                            <div class="image">
+                                <a href="#work"><img src="{% static 'core/img/crianca_arco_iris.png' %}" alt="{% trans 'Criança Arco-íris - ThetaHealing' %}" /></a>
+                            </div>
+                            <div class="desc">
+                                <span class="desc-title">{% trans 'Criança Arco-íris' %}</span>
+                                <span class="desc-text">ThetaHealing®</span>
+                            </div>
+                        </div>
+                        <!-- end work -->
+                        <p class="text-center">{% trans 'ThetaHealing® - Criança arco-íris' %}</p>
+                    </div>
+                    <!-- end col-3 -->
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <!-- begin work -->
+                        <div class="work">
+                            <div class="image">
+                                <a href="#work"><img src="{% static 'core/img/anatomia_intuitiva.jpg' %}" alt="{% trans 'Anatomia Intuitiva - ThetaHealing' %}" /></a>
+                            </div>
+                            <div class="desc">
+                                <span class="desc-title">{% trans 'Anatomia Intuitiva' %}</span>
+                                <span class="desc-text">ThetaHealing®</span>
+                            </div>
+                        </div>
+                        <!-- end work -->
+                        <p class="text-center">{% trans 'ThetaHealing® - Anatomia Intuitiva' %}</p>
+                    </div>
+                    <!-- end col-3 -->
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <!-- begin work -->
+                        <div class="work">
+                            <div class="image">
+                                <a href="#work"><img src="{% static 'core/img/voce_e_o_criador.jpg' %}" alt="{% trans 'Relacionamentos II: Você e o Criador - ThetaHealing' %}" /></a>
+                            </div>
+                            <div class="desc">
+                                <span class="desc-title">{% trans 'Você e o Criador' %}</span>
+                                <span class="desc-text">ThetaHealing®</span>
+                            </div>
+                        </div>
+                        <!-- end work -->
+                        <p class="text-center">{% trans 'ThetaHealing® - Você e o Criador' %}</p>
+                    </div>
+                    <!-- end col-3 -->
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <!-- begin work -->
+                        <div class="work">
+                            <div class="image">
+                                <a href="#work"><img src="{% static 'core/img/voce_e_seu_parceiro.jpg' %}" alt="{% trans 'Relacionamentos I: Você e seu Parceiro - ThetaHealing' %}" /></a>
+                            </div>
+                            <div class="desc">
+                                <span class="desc-title">{% trans 'Você e seu Parceiro' %}</span>
+                                <span class="desc-text">ThetaHealing®</span>
+                            </div>
+                        </div>
+                        <!-- end work -->
+                        <p class="text-center">{% trans 'ThetaHealing® - Você e seu Parceiro' %}</p>
+                    </div>
+                    <!-- end col-3 -->
+                </div>
+                <!-- end row -->
+                <!-- begin row -->
+                <div class="row row-space-10">
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <!-- begin work -->
+                        <div class="work">
+                            <div class="image">
+                                <a href="#work"><img src="{% static 'core/img/barras_access.jpg' %}" alt="{% trans 'Barras de Access - Access Consciousness' %}" /></a>
+                            </div>
+                            <div class="desc">
+                                <span class="desc-title">{% trans 'Barras de Access®' %}</span>
+                                <span class="desc-text">Access Consciousness®</span>
+                            </div>
+                        </div>
+                        <!-- end work -->
+                        <p class="text-center">{% trans 'Access Consciousness - Barras de Access®' %}</p>
+                    </div>
+                    <!-- end col-3 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #work -->
+        
+        <!-- begin #client -->
+        <div id="client" class="content has-bg bg-green" data-scrollview="true">
+            <!-- begin content-bg -->
+            <div class="content-bg">
+                <img src="{% static 'assets/img/client-bg.jpg' %}" alt="Client" />
+            </div>
+            <!-- end content-bg -->
+            <!-- begin container -->
+            <div class="container" data-animation="true" data-animation-type="fadeInUp">
+                <h2 class="content-title">{% trans 'Depoimento de nossos clientes' %}</h2>
+                <!-- begin carousel -->
+                <div class="carousel testimonials slide" data-ride="carousel" id="testimonials">
+                    <!-- begin carousel-inner -->
+                    <div class="carousel-inner text-center">
+                        <!-- begin item -->
+                        <div class="item active">
+                            <blockquote>
+                                <i class="fa fa-quote-left"></i>
+                                    {% trans 'Estava com os exames e tudo pronto para fazer minha cirurgia, mas retornei ao médico <br />após um atendimento e ele me disse que eu não tinha mais <br />nada e me mandou de volta para casa, sem entender como aquilo tinha acontecido.' %}
+                                <i class="fa fa-quote-right"></i>
+                            </blockquote>
+                            <div class="name"> — <span class="text-theme">Maria Antônia</span>, {% trans 'Aposentada' %}</div>
+                        </div>
+                        <!-- end item -->
+                        <!-- begin item -->
+                        <div class="item">
+                            <blockquote>
+                                <i class="fa fa-quote-left"></i>
+                                    {% trans 'Me senti muito mais calmo e preparado para os desafios do meu dia-a-dia e <br />da minha empresa após algumas sessões que fiz. Recomendo!' %}
+                                <i class="fa fa-quote-right"></i>
+                            </blockquote>
+                            <div class="name"> — <span class="text-theme">Diego Antunes</span>, {% trans 'Empresário' %}</div>
+                        </div>
+                        <!-- end item -->
+                        <!-- begin item -->
+                        <div class="item">
+                            <blockquote>
+                                <i class="fa fa-quote-left"></i>
+                                    {% trans 'O ThetaHealing mudou minha vida para muito melhor. <br />Agora consigo tudo que desejo e minha vida está muito mais fácil!' %}
+                                <i class="fa fa-quote-right"></i>
+                            </blockquote>
+                            <div class="name"> — <span class="text-theme">Jéssica Silva</span></div>
+                        </div>
+                        <!-- end item -->
+                    </div>
+                    <!-- end carousel-inner -->
+                    <!-- begin carousel-indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#testimonials" data-slide-to="0" class="active"></li>
+                        <li data-target="#testimonials" data-slide-to="1" class=""></li>
+                        <li data-target="#testimonials" data-slide-to="2" class=""></li>
+                    </ol>
+                    <!-- end carousel-indicators -->
+                </div>
+                <!-- end carousel -->
+            </div>
+            <!-- end containter -->
+        </div>
+        <!-- end #client -->
+        
+        <!-- begin #contact -->
+        <div id="contact" class="content bg-silver-lighter" data-scrollview="true">
+            <!-- begin container -->
+            <div class="container">
+                <h2 class="content-title">{% trans 'Contato' %}</h2>
+                <p class="content-desc">
+                </p>
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-6 -->
+                    <div class="col-md-6" data-animation="true" data-animation-type="fadeInLeft">
+                        <h3>{% trans 'Se tiver interesse em atendimentos ou em levar algum curso para sua cidade entre em contato conosco.' %}</h3>
+                        <p>
+                            <strong>IMF - Desenvolvimento Humano, Pessoal e Profissional</strong><br />
+                            São Paulo, SP<br />
+                        </p>
+                        <p>
+                            <span class="phone">+55 (35) 99877-8378</span> - Matheus Figueiredo<br />
+                            <a href="mailto:matheusmf.terapias@gmail.com">matheusmf.terapias@gmail.com</a>
+                        </p>
+                        <p>
+                            <span class="phone">+55 (35) 99875-6552</span> - Carolina Alves<br />
+                            <a href="mailto:carolinaimfterapias@gmail.com">carolinaimfterapias@gmail.com</a>
+                        </p>
+                    </div>
+                    <!-- end col-6 -->
+                    {% comment %}
+                    <!-- begin col-6 -->
+                    <div class="col-md-6 form-col" data-animation="true" data-animation-type="fadeInRight">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-md-3">{% trans 'Nome' %} <span class="text-theme">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">{% trans 'E-mail' %} <span class="text-theme">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">{% trans 'Mensagem' %} <span class="text-theme">*</span></label>
+                                <div class="col-md-9">
+                                    <textarea class="form-control" rows="10"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3"></label>
+                                <div class="col-md-9 text-left">
+                                    <button type="submit" class="btn btn-theme btn-block">{% trans 'Enviar a Mensagem' %}</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- end col-6 -->
+                    {% endcomment %}
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #contact -->
+        
+        <!-- begin #footer -->
+        <div id="footer" class="footer">
+            <div class="container">
+                <div class="footer-brand">
+                    <img class="footer-logo-image" src="{% static 'core/img/imf_logo.png' %}" alt="Home" /><br />
+                    IMF - Desenvolvimento Humano, Pessoal e Profissional
+                </div>
+                <p class="social-list">
+                    <a href="https://www.facebook.com/IMFDesenvolvimentoHumano" target="_blank"><i class="fa fa-facebook fa-fw"></i></a>
+                    <a href="https://www.instagram.com/imfterapias/" target="_blank"><i class="fa fa-instagram fa-fw"></i></a>
+                    {% comment %}
+                    <a href="#" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
+                    {% endcomment %}
+                </p>
+            </div>
+        </div>
+        <!-- end #footer -->
+    </div>
+    <!-- end #page-container -->
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="{% static 'assets/plugins/jquery/jquery-1.9.1.min.js' %}"></script>
+	<script src="{% static 'assets/plugins/jquery/jquery-migrate-1.1.0.min.js' %}"></script>
+	<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+	<!--[if lt IE 9]>
+		<script src="{% static 'assets/crossbrowserjs/html5shiv.js' %}"></script>
+		<script src="{% static 'assets/crossbrowserjs/respond.min.js' %}"></script>
+		<script src="{% static 'assets/crossbrowserjs/excanvas.min.js' %}"></script>
+	<![endif]-->
+	<script src="{% static 'assets/plugins/jquery-cookie/jquery.cookie.js' %}"></script>
+	<script src="{% static 'assets/plugins/scrollMonitor/scrollMonitor.js' %}"></script>
+	<script src="{% static 'assets/js/apps.min.js' %}"></script>
+	<!-- ================== END BASE JS ================== -->
+	
+	<script>    
+	    $(document).ready(function() {
+	        App.init();
+	    });
+	</script>
+</body>
+</html>

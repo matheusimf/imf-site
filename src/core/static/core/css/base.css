@@ -1,0 +1,29 @@
+.brand-logo.main-header {
+  border: none;
+  margin-top: -15px;
+}
+@media only screen and (max-width: 500px) {
+  .brand-logo.main-header {
+    margin-top: -25px;
+  }
+}
+
+.logo-image{
+  width: 50px;
+}
+
+.footer-logo-image{
+  width: 100px;
+}
+
+.main-image {
+  width: 1286px;
+}
+
+.text-imf {
+  color: #8F8E8E;
+}
+
+.mini-image {
+  width: 128px;
+}
