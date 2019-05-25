@@ -59,6 +59,7 @@ docs/_build/
 
 # SQLite Databases
 *.sqlite
+*.sqlite3
 *.db
 
 # Celery
