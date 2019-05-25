@@ -20,5 +20,5 @@ from core.views import Home
 
 urlpatterns = [
     url(r'^$', Home.as_view(), name='home'),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
 ]

@@ -25,7 +25,7 @@ SECRET_KEY = 'b0z-_m1%_3ny=m955+oeh0%qd8%7=lx+k_ybz&ju)+hs7n7ueh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['universoquantico.com', 'localhost']
 
 
 # Application definition
@@ -101,5 +101,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = '/usr/share/nginx/imf/static/'
+MEDIA_ROOT = '/usr/share/nginx/imf/media/'
+
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+SILENCED_SYSTEM_CHECKS = [
+    'admin.E408',
+    'admin.E409',
+]
