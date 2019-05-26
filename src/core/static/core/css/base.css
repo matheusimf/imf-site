@@ -17,7 +17,8 @@
 }
 
 .main-image {
-  width: 1286px;
+  width: 100%;
+  padding-top: 40px;
 }
 
 .text-imf {
@@ -26,4 +27,13 @@
 
 .mini-image {
   width: 128px;
+}
+
+.content.has-bg .content-bg:before {
+  opacity: 0.2;
+  filter: alpha(opacity=20); /* For IE8 and earlier */
+}
+
+.navbar-small {
+  padding-top: 10px;
 }

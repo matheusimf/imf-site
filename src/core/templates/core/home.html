@@ -72,9 +72,10 @@
             <!-- begin content-bg -->
             <div class="content-bg">
                 <!-- <img src="{% static 'assets/img/home-bg.jpg' %}" alt="Home" /> -->
-                <img class="main-image" src="{% static 'core/img/dna_main_image.jpg' %}" alt="Home" />
+                <img class="main-image" src="{% static 'core/img/perfil_universo_quantico_altered.jpg' %}" alt="Home" />
             </div>
             <!-- end content-bg -->
+            {% comment %}
             <!-- begin container -->
             <div class="container home-content">
                 <h1>Universo Quântico</h1>
@@ -82,6 +83,7 @@
                 <h5>Ajudando pessoas e empresas a alcançar seus objetivos, sonhos e a vida que desejam ter</h5>
             </div>
             <!-- end container -->
+            {% endcomment %}
         </div>
         <!-- end #home -->
 
@@ -697,6 +699,8 @@
 	<script src="{% static 'assets/plugins/scrollMonitor/scrollMonitor.js' %}"></script>
 	<script src="{% static 'assets/js/apps.min.js' %}"></script>
 	<!-- ================== END BASE JS ================== -->
+
+  <script src="{% static 'core/js/base.js' %}"></script>
 
 	<script>
 	    $(document).ready(function() {
