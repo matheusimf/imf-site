@@ -1,72 +1,9 @@
+{% extends "core/base.html" %}
 {% load i18n %}
 {% load static from staticfiles %}
 
-<!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="en">
-<!--<![endif]-->
-<head>
-	<meta charset="utf-8" />
-	<title>{% trans 'Universo Quântico'%}</title>
-	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-	<meta content="" name="description" />
-	<meta content="" name="author" />
 
-	<!-- ================== BEGIN BASE CSS STYLE ================== -->
-	<link href="{% static 'core/css/base.css' %}" rel="stylesheet" />
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-	<link href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
-	<link href="{% static 'assets/plugins/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" />
-	<link href="{% static 'assets/css/animate.min.css' %}" rel="stylesheet" />
-	<link href="{% static 'assets/css/style.min.css' %}" rel="stylesheet" />
-	<link href="{% static 'assets/css/style-responsive.min.css' %}" rel="stylesheet" />
-	<link href="{% static 'assets/css/theme/default.css' %}" id="theme" rel="stylesheet" />
-	<!-- ================== END BASE CSS STYLE ================== -->
-
-  <!-- ================== FAVICON ================== -->
-  <link rel="shortcut icon" type="image/png" href="{% static 'core/img/universo_quantico_logo.png' %}"/>
-  <!-- ================== END FAVICON ================== -->
-</head>
-<body data-spy="scroll" data-target="#header-navbar" data-offset="51">
-    <!-- begin #page-container -->
-    <div id="page-container" class="fade">
-        <!-- begin #header -->
-        <div id="header" class="header navbar navbar-default navbar-fixed-top">
-            <!-- begin container -->
-            <div class="container">
-                <!-- begin navbar-header -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="#home" data-click="scroll-to-target" class="navbar-brand">
-                        <span class="brand-logo main-header">
-                            <img class="logo-image" src="{% static 'core/img/universo_logo_escrito.png' %}" alt="Home" />
-                        </span>
-                    </a>
-                </div>
-                <!-- end navbar-header -->
-                <!-- begin navbar-collapse -->
-                <div class="collapse navbar-collapse" id="header-navbar">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="active dropdown"><a href="#home" data-click="scroll-to-target">{% trans 'HOME' %}</a></li>
-                        <li><a href="#about" data-click="scroll-to-target">{% trans 'SOBRE NÓS' %}</a></li>
-                        <li><a href="#team" data-click="scroll-to-target">{% trans 'TIME' %}</a></li>
-                        <li><a href="#service" data-click="scroll-to-target">{% trans 'SERVIÇOS' %}</a></li>
-                        <li><a href="#work" data-click="scroll-to-target">{% trans 'CURSOS' %}</a></li>
-                        <li><a href="#client" data-click="scroll-to-target">{% trans 'CLIENTES' %}</a></li>
-                        <li><a href="#contact" data-click="scroll-to-target">{% trans 'CONTATO' %}</a></li>
-                    </ul>
-                </div>
-                <!-- end navbar-collapse -->
-            </div>
-            <!-- end container -->
-        </div>
-        <!-- end #header -->
-
+        {% block everything %}
         <!-- begin #home -->
         <div id="home" class="content has-bg home">
             <!-- begin content-bg -->
@@ -666,46 +603,4 @@
             <!-- end container -->
         </div>
         <!-- end #contact -->
-
-        <!-- begin #footer -->
-        <div id="footer" class="footer">
-            <div class="container">
-                <div class="footer-brand">
-                    <img class="footer-logo-image" src="{% static 'core/img/universo_logo_semi_inteira.png' %}" alt="Home" /><br />
-                </div>
-                <p class="social-list">
-                    <a href="https://www.facebook.com/UniversoQuanticoDH" target="_blank"><i class="fa fa-facebook fa-fw"></i></a>
-                    <a href="https://www.instagram.com/universoquanticodh/" target="_blank"><i class="fa fa-instagram fa-fw"></i></a>
-                    {% comment %}
-                    <a href="#" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
-                    {% endcomment %}
-                </p>
-            </div>
-        </div>
-        <!-- end #footer -->
-    </div>
-    <!-- end #page-container -->
-
-	<!-- ================== BEGIN BASE JS ================== -->
-	<script src="{% static 'assets/plugins/jquery/jquery-1.9.1.min.js' %}"></script>
-	<script src="{% static 'assets/plugins/jquery/jquery-migrate-1.1.0.min.js' %}"></script>
-	<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
-	<!--[if lt IE 9]>
-		<script src="{% static 'assets/crossbrowserjs/html5shiv.js' %}"></script>
-		<script src="{% static 'assets/crossbrowserjs/respond.min.js' %}"></script>
-		<script src="{% static 'assets/crossbrowserjs/excanvas.min.js' %}"></script>
-	<![endif]-->
-	<script src="{% static 'assets/plugins/jquery-cookie/jquery.cookie.js' %}"></script>
-	<script src="{% static 'assets/plugins/scrollMonitor/scrollMonitor.js' %}"></script>
-	<script src="{% static 'assets/js/apps.min.js' %}"></script>
-	<!-- ================== END BASE JS ================== -->
-
-  <script src="{% static 'core/js/base.js' %}"></script>
-
-	<script>
-	    $(document).ready(function() {
-	        App.init();
-	    });
-	</script>
-</body>
-</html>
+        {% endblock everything %}
