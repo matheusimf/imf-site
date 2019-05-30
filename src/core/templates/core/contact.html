@@ -1,0 +1,68 @@
+{% extends "core/base.html" %}
+{% load i18n %}
+{% load static from staticfiles %}
+
+{% block active_contact_menu %}active{% endblock active_contact_menu %}
+
+
+        {% block everything %}
+        <!-- begin #contact -->
+        <div id="contact" class="content" data-scrollview="true">
+            <!-- begin container -->
+            <div class="container">
+                <h2 class="content-title">{% trans 'Contato' %}</h2>
+                <p class="content-desc">
+                </p>
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-6 -->
+                    <div class="col-md-6" data-animation="true" data-animation-type="fadeInLeft">
+                        <h3>{% trans 'Se tiver interesse em atendimentos ou em levar algum curso para sua cidade entre em contato conosco.' %}</h3>
+                        <p>
+                            <strong>Universo Quântico</strong><br />
+                            São Paulo, SP<br />
+                        </p>
+                            <span class="phone">+55 (35) 99875-6552</span> - Carolina Alves<br />
+                            <a href="mailto:universoquanticodh@gmail.com">universoquanticodh@gmail.com</a>
+                        </p>
+                    </div>
+                    <!-- end col-6 -->
+                    {% comment %}
+                    <!-- begin col-6 -->
+                    <div class="col-md-6 form-col" data-animation="true" data-animation-type="fadeInRight">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-md-3">{% trans 'Nome' %} <span class="text-theme">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">{% trans 'E-mail' %} <span class="text-theme">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">{% trans 'Mensagem' %} <span class="text-theme">*</span></label>
+                                <div class="col-md-9">
+                                    <textarea class="form-control" rows="10"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3"></label>
+                                <div class="col-md-9 text-left">
+                                    <button type="submit" class="btn btn-theme btn-block">{% trans 'Enviar a Mensagem' %}</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- end col-6 -->
+                    {% endcomment %}
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #contact -->
+        {% endblock everything %}

@@ -1,0 +1,175 @@
+{% extends "core/base.html" %}
+{% load i18n %}
+{% load static from staticfiles %}
+
+
+        {% block everything %}
+        <!-- begin #work -->
+        <div id="work" class="content" data-scrollview="true">
+            <!-- begin container -->
+            <div class="container" data-animation="true" data-animation-type="fadeInDown">
+                <h2 class="content-title">{% trans 'Nossos Cursos' %}</h2>
+                <p class="content-desc">
+                    {% trans 'Abaixo estão os cursos oferecidos por nossos profissionais nas diversas técnicas que trabalhamos' %}
+                </p>
+                <!-- begin row -->
+                <div class="row row-space-10">
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <!-- begin work -->
+                        <div class="work">
+                            <div class="image">
+                                <a href="#work"><img src="{% static 'core/img/dna_basico.jpeg' %}" alt="{% trans 'DNA Básico - ThetaHealing' %}" /></a>
+                            </div>
+                            <div class="desc">
+                                <span class="desc-title">{% trans 'DNA Básico' %}</span>
+                                <span class="desc-text">ThetaHealing®</span>
+                            </div>
+                        </div>
+                        <p class="text-center">{% trans 'ThetaHealing® - DNA Básico' %}</p>
+                        <!-- end work -->
+                    </div>
+                    <!-- end col-3 -->
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <!-- begin work -->
+                        <div class="work">
+                            <div class="image">
+                                <a href="#work"><img src="{% static 'core/img/dna_avancado.jpeg' %}" alt="{% trans 'DNA Avançado - ThetaHealing' %}" /></a>
+                            </div>
+                            <div class="desc">
+                                <span class="desc-title">{% trans 'DNA Avançado' %}</span>
+                                <span class="desc-text">ThetaHealing®</span>
+                            </div>
+                        </div>
+                        <!-- end work -->
+                        <p class="text-center">{% trans 'ThetaHealing® - DNA Avançado' %}</p>
+                    </div>
+                    <!-- end col-3 -->
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <!-- begin work -->
+                        <div class="work">
+                            <div class="image">
+                                <a href="#work"><img src="{% static 'core/img/digging.jpeg' %}" alt="{% trans 'Aprofundando no Digging - ThetaHealing' %}" /></a>
+                            </div>
+                            <div class="desc">
+                                <span class="desc-title">{% trans 'Aprofundando no Digging' %}</span>
+                                <span class="desc-text">ThetaHealing®</span>
+                            </div>
+                        </div>
+                        <!-- end work -->
+                        <p class="text-center">{% trans 'ThetaHealing® - Aprofundando no Digging' %}</p>
+                    </div>
+                    <!-- end col-3 -->
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <!-- begin work -->
+                        <div class="work">
+                            <div class="image">
+                                <a href="#work"><img src="{% static 'core/img/manifestacao_e_abundancia.jpeg' %}" alt="{% trans 'Manifestação e Abundância - ThetaHealing' %}" /></a>
+                            </div>
+                            <div class="desc">
+                                <span class="desc-title">{% trans 'Manifestação e Abundância' %}</span>
+                                <span class="desc-text">ThetaHealing®</span>
+                            </div>
+                        </div>
+                        <!-- end work -->
+                        <p class="text-center">{% trans 'ThetaHealing® - Manifestação e Abundância' %}</p>
+                    </div>
+                    <!-- end col-3 -->
+                </div>
+                <!-- end row -->
+                <!-- begin row -->
+                <div class="row row-space-10">
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <!-- begin work -->
+                        <div class="work">
+                            <div class="image">
+                                <a href="#work"><img src="{% static 'core/img/crianca_arco_iris.png' %}" alt="{% trans 'Criança Arco-íris - ThetaHealing' %}" /></a>
+                            </div>
+                            <div class="desc">
+                                <span class="desc-title">{% trans 'Criança Arco-íris' %}</span>
+                                <span class="desc-text">ThetaHealing®</span>
+                            </div>
+                        </div>
+                        <!-- end work -->
+                        <p class="text-center">{% trans 'ThetaHealing® - Criança arco-íris' %}</p>
+                    </div>
+                    <!-- end col-3 -->
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <!-- begin work -->
+                        <div class="work">
+                            <div class="image">
+                                <a href="#work"><img src="{% static 'core/img/anatomia_intuitiva.jpg' %}" alt="{% trans 'Anatomia Intuitiva - ThetaHealing' %}" /></a>
+                            </div>
+                            <div class="desc">
+                                <span class="desc-title">{% trans 'Anatomia Intuitiva' %}</span>
+                                <span class="desc-text">ThetaHealing®</span>
+                            </div>
+                        </div>
+                        <!-- end work -->
+                        <p class="text-center">{% trans 'ThetaHealing® - Anatomia Intuitiva' %}</p>
+                    </div>
+                    <!-- end col-3 -->
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <!-- begin work -->
+                        <div class="work">
+                            <div class="image">
+                                <a href="#work"><img src="{% static 'core/img/voce_e_o_criador.jpg' %}" alt="{% trans 'Relacionamentos II: Você e o Criador - ThetaHealing' %}" /></a>
+                            </div>
+                            <div class="desc">
+                                <span class="desc-title">{% trans 'Você e o Criador' %}</span>
+                                <span class="desc-text">ThetaHealing®</span>
+                            </div>
+                        </div>
+                        <!-- end work -->
+                        <p class="text-center">{% trans 'ThetaHealing® - Você e o Criador' %}</p>
+                    </div>
+                    <!-- end col-3 -->
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <!-- begin work -->
+                        <div class="work">
+                            <div class="image">
+                                <a href="#work"><img src="{% static 'core/img/voce_e_seu_parceiro.jpg' %}" alt="{% trans 'Relacionamentos I: Você e seu Parceiro - ThetaHealing' %}" /></a>
+                            </div>
+                            <div class="desc">
+                                <span class="desc-title">{% trans 'Você e seu Parceiro' %}</span>
+                                <span class="desc-text">ThetaHealing®</span>
+                            </div>
+                        </div>
+                        <!-- end work -->
+                        <p class="text-center">{% trans 'ThetaHealing® - Você e seu Parceiro' %}</p>
+                    </div>
+                    <!-- end col-3 -->
+                </div>
+                <!-- end row -->
+                <!-- begin row -->
+                <div class="row row-space-10">
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <!-- begin work -->
+                        <div class="work">
+                            <div class="image">
+                                <a href="#work"><img src="{% static 'core/img/barras_access.jpg' %}" alt="{% trans 'Barras de Access - Access Consciousness' %}" /></a>
+                            </div>
+                            <div class="desc">
+                                <span class="desc-title">{% trans 'Barras de Access®' %}</span>
+                                <span class="desc-text">Access Consciousness®</span>
+                            </div>
+                        </div>
+                        <!-- end work -->
+                        <p class="text-center">{% trans 'Access Consciousness - Barras de Access®' %}</p>
+                    </div>
+                    <!-- end col-3 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #work -->
+        {% endblock everything %}

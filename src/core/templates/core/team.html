@@ -1,0 +1,85 @@
+{% extends "core/base.html" %}
+{% load i18n %}
+{% load static from staticfiles %}
+
+{% block active_team_menu %}active{% endblock active_team_menu %}
+
+
+        {% block everything %}
+        <!-- begin #team -->
+        <div id="team" class="content" data-scrollview="true">
+            <!-- begin container -->
+            <div class="container">
+                <h2 class="content-title">{% trans 'Nosso Time' %}</h2>
+                <p class="content-desc">
+                    Uma equipe de profissionais de diferentes áreas prontos para ajudar sua empresa, sua família e a você mesmo
+                </p>
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <!-- begin team -->
+                        <div class="team">
+                            <div class="image" data-animation="true" data-animation-type="flipInX">
+                                <img class="mini-image" src="{% static 'core/img/matheus_figueiredo.jpeg' %}" alt="Matheus Figueiredo" />
+                            </div>
+                            <div class="info">
+                                <h3 class="name">Matheus Figueiredo</h3>
+                                <div class="title text-theme">{% trans 'Fundador e Instrutor' %}</div>
+                                <p>{% trans 'Com experiência em Mercados Financeiros, Consultorias e Programação de Computadores atualmente utiliza seus conhecimentos para levar as pessoas à melhor versão delas mesmas' %}</p>
+                                <div class="social">
+                                    <a href="https://www.facebook.com/matheus.imfterapias" target="_blank"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+                                    <a href="https://www.instagram.com/matheusimfterapias/" target="_blank"><i class="fa fa-instagram fa-lg fa-fw"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end team -->
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <!-- begin team -->
+                        <div class="team">
+                            <div class="image" data-animation="true" data-animation-type="flipInX">
+                                <img class="mini-image" src="{% static 'core/img/carolina_alves.jpg' %}" alt="Carolina Alves" />
+                            </div>
+                            <div class="info">
+                                <h3 class="name">Carolina Alves</h3>
+                                <div class="title text-theme">{% trans 'Fundadora e Instrutora' %}</div>
+                                <p>{% trans 'Com formação em Administração e Marketing Digital utiliza todo seu pensamento lógico e criatividade no dia-a-dia da empresa e para ajudar seus pacientes' %}</p>
+                                <div class="social">
+                                    <a href="https://www.facebook.com/carolina.terapia" target="_blank"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+                                    <a href="https://www.instagram.com/carolimfterapias/" target="_blank"><i class="fa fa-instagram fa-lg fa-fw"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end team -->
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <!-- begin team -->
+                        <div class="team">
+                            <div class="image" data-animation="true" data-animation-type="flipInX">
+                                <img class="mini-image" src="{% static 'core/img/matheus_figueiredo.jpeg' %}" alt="Rodrigo Lifsitch" />
+                            </div>
+                            <div class="info">
+                                <h3 class="name">Rodrigo Lifsitch</h3>
+                                <div class="title text-theme">{% trans 'Relacionamento Humano' %}</div>
+                                <p>{% trans 'Bem humorado e comunicativo gosta de fazer as pessoas se sentirem bem, tanto com suas habilidades culinárias quanto tirando suas dúvidas' %}</p>
+                                <div class="social">
+                                    <a href="https://www.facebook.com/matheus.imfterapias" target="_blank"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+                                    <a href="https://www.instagram.com/matheusmf.terapias/" target="_blank"><i class="fa fa-instagram fa-lg fa-fw"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end team -->
+                    </div>
+                    <!-- end col-4 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #team -->
+        {% endblock everything %}

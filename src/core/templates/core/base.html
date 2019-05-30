@@ -53,7 +53,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="#home" data-click="scroll-to-target" class="navbar-brand">
+                    <a href="{% url 'home' %}#home" data-click="scroll-to-target" class="navbar-brand">
                         <span class="brand-logo main-header">
                             <img class="logo-image" src="{% static 'core/img/universo_logo_escrito.png' %}" alt="Home" />
                         </span>
@@ -63,13 +63,24 @@
                 <!-- begin navbar-collapse -->
                 <div class="collapse navbar-collapse" id="header-navbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active dropdown"><a href="#home" data-click="scroll-to-target">{% trans 'HOME' %}</a></li>
-                        <li><a href="#about" data-click="scroll-to-target">{% trans 'SOBRE NÓS' %}</a></li>
-                        <li><a href="#team" data-click="scroll-to-target">{% trans 'TIME' %}</a></li>
-                        <li><a href="#service" data-click="scroll-to-target">{% trans 'SERVIÇOS' %}</a></li>
-                        <li><a href="#work" data-click="scroll-to-target">{% trans 'CURSOS' %}</a></li>
-                        <li><a href="#client" data-click="scroll-to-target">{% trans 'CLIENTES' %}</a></li>
-                        <li><a href="#contact" data-click="scroll-to-target">{% trans 'CONTATO' %}</a></li>
+                        <li class="{% block active_home_menu %}{% endblock active_home_menu %} dropdown">
+                          <a href="{% url 'home' %}" data-click="scroll-to-target">{% trans 'HOME' %}</a>
+                        </li>
+                        <li class="{% block active_aboutus_menu %}{% endblock active_aboutus_menu %}">
+                          <a href="{% url 'aboutus' %}" data-click="scroll-to-target">{% trans 'SOBRE NÓS' %}</a>
+                        </li>
+                        <li class="{% block active_team_menu %}{% endblock active_team_menu %}">
+                          <a href="{% url 'team' %}" data-click="scroll-to-target">{% trans 'TIME' %}</a>
+                        </li>
+                        <li class="{% block active_services_menu %}{% endblock active_services_menu %}">
+                          <a href="{% url 'services' %}" data-click="scroll-to-target">{% trans 'SERVIÇOS' %}</a>
+                        </li>
+                        <li class="{% block active_seminars_menu %}{% endblock active_seminars_menu %}">
+                          <a href="{% url 'seminars' %}" data-click="scroll-to-target">{% trans 'CURSOS' %}</a>
+                        </li>
+                        <li class="{% block active_contact_menu %}{% endblock active_contact_menu %}">
+                          <a href="{% url 'contact' %}" data-click="scroll-to-target">{% trans 'CONTATO' %}</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- end navbar-collapse -->
@@ -119,7 +130,7 @@
   <script src="{% static 'assets/js/apps.min.js' %}"></script>
 
     <!-- My base js -->
-  <script src="{% static 'core/js/base.js' %}"></script>
+
 
   {% block postjs %}
   {% endblock postjs %}

@@ -1,0 +1,59 @@
+{% extends "core/base.html" %}
+{% load i18n %}
+{% load static from staticfiles %}
+
+{% block active_services_menu %}active{% endblock active_services_menu %}
+
+
+        {% block everything %}
+        <!-- beign #service -->
+        <div id="service" class="content" data-scrollview="true">
+            <!-- begin container -->
+            <div class="container">
+                <h2 class="content-title">{% trans 'Nossos Serviços' %}</h2>
+                <p class="content-desc">
+                    {% trans 'Nós utilizamos técnicas de terapias quânticas para ajudar a liberar padrões e crenças limitantes que atrapalham sua vida de se manifestar da maneira que desejar.' %}<br />
+                    {% trans 'As transformações através destas técnicas podem ocorrer em qualquer área, como na alegria, amor, abundância, sucesso e autoconfiança. São indicados para os casos de depressão, fobias e medos, síndrome do pânico, dores físicas, alergias, fibromialgia, enxaqueca, ansiedade e angústia, rinite, distúrbios do sono, estresses e muito mais.' %}
+                </p>
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service">
+                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-hand-o-right"></i></div>
+                            <div class="info">
+                                <h4 class="title">{% trans 'ThetaHealing®' %}</h4>
+                                <p class="desc">{% trans 'A técnica utiliza uma meditação, com o objetivo de treinar sua mente, corpo e espírito para viver a vida com pensamentos positivos, desenvolvendo virtudes e percebendo e recebendo os aprendizados de todas as situações de nossa vida e em tudo o que fazemos.' %}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service">
+                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-hand-o-right"></i></div>
+                            <div class="info">
+                                <h4 class="title">{% trans 'Barras de Access®' %}</h4>
+                                <p class="desc">{% trans 'É uma técnica de 32 pontos na cabeça que ao serem tocados começam a dissipar uma carga eletromagnética presa por pensamentos, sentimentos e emoções. Com esta liberação começamos a ver e acreditar que podemos de fato ter a vida que desejamos.' %}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service">
+                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-hand-o-right"></i></div>
+                            <div class="info">
+                                <h4 class="title">{% trans 'Cursos' %}</h4>
+                                <p class="desc">{% trans 'Trabalhamos com cursos ensinando as pessoas a utilizar algumas das técnicas com as quais trabalhamos. Estes cursos são de Barras de Access® e ThetaHealing®, este último sendo oferecido em vários módulos distintos.' %}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col-4 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #service -->
+        {% endblock everything %}

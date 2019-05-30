@@ -8,13 +8,18 @@ $(function() {
     mainImageWidth = window.screen.width
 
     // Find the image proportion  height x width
-    imageProportion = 1363/2364
+    if ( mainImageWidth >= 992 ){
+      imageProportion = 1163/2364
+    } else {
+      imageProportion = 1363/2364
+    }
 
     // Calculate image height
     mainImageHeight = Math.round( imageProportion * mainImageWidth);
 
     // Get the padding-top for the image to keep it's dimensions
     imagePadding = $('.main-image').css('padding-top')
+    console.log(imagePadding)
     paddingToAdd = parseInt(imagePadding);
 
     // Giving the home page the proper height

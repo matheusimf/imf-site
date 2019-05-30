@@ -16,9 +16,15 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from core.views import Home
+from core.views import (Home, Seminars, AboutUs, Team, Services,
+                        Contact)
 
 urlpatterns = [
     url(r'^$', Home.as_view(), name='home'),
+    url(r'^aboutus/$', AboutUs.as_view(), name='aboutus'),
+    url(r'^team/$', Team.as_view(), name='team'),
+    url(r'^services/$', Services.as_view(), name='services'),
+    url(r'^seminars/$', Seminars.as_view(), name='seminars'),
+    url(r'^contact/$', Contact.as_view(), name='contact'),
     url(r'^admin/', admin.site.urls),
 ]
