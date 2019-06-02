@@ -2,6 +2,10 @@
 {% load i18n %}
 {% load static from staticfiles %}
 
+  {% block postcss %}
+  <link href="{% static 'core/css/home.css' %}" rel="stylesheet" />
+  {% endblock postcss %}
+
 {% block active_home_menu %}active{% endblock active_home_menu %}
 
         {% block everything %}
@@ -24,106 +28,6 @@
             {% endcomment %}
         </div>
         <!-- end #home -->
-
-        <!-- begin #milestone -->
-        <div id="milestone" class="content bg-black-darker has-bg" data-scrollview="true">
-            <!-- begin content-bg -->
-            <div class="content-bg">
-                <img src="{% static 'assets/img/milestone-bg.jpg' %}" alt="Milestone" />
-            </div>
-            <!-- end content-bg -->
-            <!-- begin container -->
-            <div class="container">
-                <!-- begin row -->
-                <div class="row">
-                    <!-- begin col-3 -->
-                    <div class="col-md-3 col-sm-3 milestone-col">
-                        <div class="milestone">
-                            <div class="number" data-animation="true" data-animation-type="number" data-final-number="12">2</div>
-                            <div class="title">{% trans 'Número de sedes' %}</div>
-                        </div>
-                    </div>
-                    <!-- end col-3 -->
-                    <!-- begin col-3 -->
-                    <div class="col-md-3 col-sm-3 milestone-col">
-                        <div class="milestone">
-                            <div class="number" data-animation="true" data-animation-type="number" data-final-number="71">71</div>
-                            <div class="title">{% trans 'Cursos Ministrados' %}</div>
-                        </div>
-                    </div>
-                    <!-- end col-3 -->
-                    <!-- begin col-3 -->
-                    <div class="col-md-3 col-sm-3 milestone-col">
-                        <div class="milestone">
-                            <div class="number" data-animation="true" data-animation-type="number" data-final-number="299">299</div>
-                            <div class="title">{% trans 'Alunos Formados' %}</div>
-                        </div>
-                    </div>
-                    <!-- end col-3 -->
-                    <!-- begin col-3 -->
-                    <div class="col-md-3 col-sm-3 milestone-col">
-                        <div class="milestone">
-                            <div class="number" data-animation="true" data-animation-type="number" data-final-number="14">14</div>
-                            <div class="title">{% trans 'Cursos Traduzidos' %}</div>
-                        </div>
-                    </div>
-                    <!-- end col-3 -->
-                </div>
-                <!-- end row -->
-            </div>
-            <!-- end container -->
-        </div>
-        <!-- end #milestone -->
-
-        <!-- begin #quote -->
-        <div id="quote" class="content bg-black-darker has-bg" data-scrollview="true">
-            <!-- begin content-bg -->
-            <div class="content-bg">
-                <img src="{% static 'assets/img/quote-bg.jpg' %}" alt="Quote" />
-            </div>
-            <!-- end content-bg -->
-            <!-- begin container -->
-            <div class="container" data-animation="true" data-animation-type="fadeInLeft">
-                <!-- begin row -->
-                <div class="row">
-                    <!-- begin col-12 -->
-                    <div class="col-md-12 quote">
-                        <i class="fa fa-quote-left"></i>{% trans 'Encontre o que você faria com amor pelos próximos 100 anos tendo todo o dinheiro do mundo que você encontrará um emprego que será um hobbie e não um trabalho!' %}
-                        <i class="fa fa-quote-right"></i>
-                        <small>{% trans 'Matheus Figueiredo, Fundador e Instrutor do Universo Quântico' %}</small>
-                    </div>
-                    <!-- end col-12 -->
-                </div>
-                <!-- end row -->
-            </div>
-            <!-- end container -->
-        </div>
-        <!-- end #quote -->
-
-        <!-- beign #action-box -->
-        <div id="action-box" class="content has-bg" data-scrollview="true">
-            <!-- begin content-bg -->
-            <div class="content-bg">
-                <img src="{% static 'assets/img/action-bg.jpg' %}" alt="Action" />
-            </div>
-            <!-- end content-bg -->
-            <!-- begin container -->
-            <div class="container" data-animation="true" data-animation-type="fadeInRight">
-                <!-- begin row -->
-                <div class="row action-box">
-                    <!-- begin col-12 -->
-                    <div class="col-md-12 quote">
-                        <i class="fa fa-quote-left"></i>{% trans 'Existe uma forma muito fácil de mudar a vida que a maioria das pessoas ainda não conhece.' %}
-                        <i class="fa fa-quote-right"></i>
-                        <small>{% trans 'Matheus Figueiredo, Fundador e Instrutor do Universo Quântico' %}</small>
-                    </div>
-                    <!-- end col-12 -->
-                </div>
-                <!-- end row -->
-            </div>
-            <!-- end container -->
-        </div>
-        <!-- end #action-box -->
 
         <!-- begin #client -->
         <div id="client" class="content has-bg bg-green" data-scrollview="true">

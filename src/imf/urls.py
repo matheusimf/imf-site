@@ -13,18 +13,17 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import include, url
 from django.contrib import admin
+from django.urls import include, path, re_path
 
-from core.views import (Home, Seminars, AboutUs, Team, Services,
-                        Contact)
+from core.views import Home, AboutUs, Team, Services, Contact
 
 urlpatterns = [
-    url(r'^$', Home.as_view(), name='home'),
-    url(r'^aboutus/$', AboutUs.as_view(), name='aboutus'),
-    url(r'^team/$', Team.as_view(), name='team'),
-    url(r'^services/$', Services.as_view(), name='services'),
-    url(r'^seminars/$', Seminars.as_view(), name='seminars'),
-    url(r'^contact/$', Contact.as_view(), name='contact'),
-    url(r'^admin/', admin.site.urls),
+    re_path(r'^$', Home.as_view(), name='home'),
+    path('aboutus/', AboutUs.as_view(), name='aboutus'),
+    path('team/', Team.as_view(), name='team'),
+    path('services/', Services.as_view(), name='services'),
+    path('seminars/', include(('seminars.urls', 'seminars'))),
+    path('contact/', Contact.as_view(), name='contact'),
+    path('admin/', admin.site.urls),
 ]

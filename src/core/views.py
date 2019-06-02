@@ -10,10 +10,6 @@ class Home(View):
         return render(request, self.template_name, context)
 
 
-class Seminars(Home):
-    template_name = 'core/seminars.html'
-
-
 class AboutUs(Home):
     template_name = 'core/aboutus.html'
 

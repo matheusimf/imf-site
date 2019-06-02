@@ -68,4 +68,29 @@
             <!-- end container -->
         </div>
         <!-- end #about -->
+
+        <!-- beign #action-box -->
+        <div id="action-box" class="content has-bg" data-scrollview="true">
+            <!-- begin content-bg -->
+            <div class="content-bg">
+                <img src="{% static 'assets/img/action-bg.jpg' %}" alt="Action" />
+            </div>
+            <!-- end content-bg -->
+            <!-- begin container -->
+            <div class="container" data-animation="true" data-animation-type="fadeInRight">
+                <!-- begin row -->
+                <div class="row action-box">
+                    <!-- begin col-12 -->
+                    <div class="col-md-12 quote">
+                        <i class="fa fa-quote-left"></i>{% trans 'Existe uma forma muito fácil de mudar a vida que a maioria das pessoas ainda não conhece.' %}
+                        <i class="fa fa-quote-right"></i>
+                        <small>{% trans 'Matheus Figueiredo, Fundador e Instrutor do Universo Quântico' %}</small>
+                    </div>
+                    <!-- end col-12 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #action-box -->
         {% endblock everything %}

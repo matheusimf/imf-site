@@ -76,7 +76,7 @@
                           <a href="{% url 'services' %}" data-click="scroll-to-target">{% trans 'SERVIÇOS' %}</a>
                         </li>
                         <li class="{% block active_seminars_menu %}{% endblock active_seminars_menu %}">
-                          <a href="{% url 'seminars' %}" data-click="scroll-to-target">{% trans 'CURSOS' %}</a>
+                          <a href="{% url 'seminars:seminars' %}" data-click="scroll-to-target">{% trans 'CURSOS' %}</a>
                         </li>
                         <li class="{% block active_contact_menu %}{% endblock active_contact_menu %}">
                           <a href="{% url 'contact' %}" data-click="scroll-to-target">{% trans 'CONTATO' %}</a>

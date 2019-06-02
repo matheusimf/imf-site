@@ -82,4 +82,29 @@
             <!-- end container -->
         </div>
         <!-- end #team -->
+
+        <!-- begin #quote -->
+        <div id="quote" class="content bg-black-darker has-bg" data-scrollview="true">
+            <!-- begin content-bg -->
+            <div class="content-bg">
+                <img src="{% static 'assets/img/quote-bg.jpg' %}" alt="Quote" />
+            </div>
+            <!-- end content-bg -->
+            <!-- begin container -->
+            <div class="container" data-animation="true" data-animation-type="fadeInLeft">
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-12 -->
+                    <div class="col-md-12 quote">
+                        <i class="fa fa-quote-left"></i>{% trans 'Encontre o que você faria com amor pelos próximos 100 anos tendo todo o dinheiro do mundo que você encontrará um emprego que será um hobbie e não um trabalho!' %}
+                        <i class="fa fa-quote-right"></i>
+                        <small>{% trans 'Matheus Figueiredo, Fundador e Instrutor do Universo Quântico' %}</small>
+                    </div>
+                    <!-- end col-12 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #quote -->
         {% endblock everything %}
