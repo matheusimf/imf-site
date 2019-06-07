@@ -10,9 +10,12 @@ class Seminars(View):
         return render(request, self.template_name, context)
 
 
-class EspicifiedSeminar(View):
-    template_name = 'seminars/seminars.html'
+class BaseSeminar(View):
+    template_name = 'seminars/base-seminars.html'
 
     def get(self, request, *args, **kwargs):
         context = {}
         return render(request, self.template_name, context)
+
+class BasicDNASeminar(BaseSeminar):
+    template_name = 'seminars/base-seminars.html'
