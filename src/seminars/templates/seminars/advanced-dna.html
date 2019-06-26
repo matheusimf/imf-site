@@ -1,0 +1,67 @@
+{% extends "seminars/base-seminars.html" %}
+{% load i18n %}
+{% load static from staticfiles %}
+
+                {% block seminar_title %}
+                    {% trans 'ThetaHealing® DNA Avançado' %}
+                {% endblock seminar_title %}
+
+                {% block seminar_subtitle %}
+                    {% trans 'O salto quântico no ThetaHealing®. Com mais de 500 downloads você verá sua vida transformar.' %}
+                {% endblock seminar_subtitle %}
+
+                {% block seminar_image %}
+                    {% static 'core/img/advanced.png' %}
+                {% endblock seminar_image %}
+                {% block seminar_image_description %}
+                    {% trans 'DNA Avançado - ThetaHealing' %}
+                {% endblock seminar_image_description %}
+
+                {% block seminar_content %}
+                    <p>No curso de DNA Avançado você vai dar continuidade ao que aprendeu no Curso DNA Básico, e vai também:</p>
+                    <p>- Aprender a limpar pensamentos e sentimentos negativos, tais como: raiva, vingança, ressentimento, remorso, rancor, agressividade, ciúme, inveja e amargura;</p>
+                    <p>- Ativar em seu sistema, através de mais de quinhentos downloads, os sentimentos fundamentais para o salto quântico;</p>
+                    <p>- Limpar programas de Rejeição, Ressentimento e Remorso;</p>
+                    <p>- Limpar medos e traumas;</p>
+                    <p>- Limpar votos, pactos e comprometimentos que te impedem de acessar livremente os planos da existência;</p>
+                    <p>- Aprofundar a compreensão e o acesso à energia de cada um dos sete planos da existência;</p>
+                    <p>- Curar almas e corações partidos;</p>
+                    <p>- Conectar-se com seus ancestrais;</p>
+                    <p>- Conectar-se com o Eu superior;</p>
+                    <p>- E outras ferramentas específicas que irão te aprimorar muito na técnica.</p>
+                {% endblock seminar_content %}
+
+                {% block seminar_material %}
+                    <p>- Apostila</p>
+                    <p>- Livro ThetaHealing®</p>
+                    <p>- Coffee Break</p>
+                    <p>- Certificado internacional do THInK - EUA</p>
+                    <p>- Cadastro no site oficial do ThetaHealing®</p>
+                {% endblock seminar_material %}
+
+                {% block seminar_prereq%}
+                    <p>DNA Básico</p>
+                {% endblock seminar_prereq%}
+
+                {% block seminar_instructor %}
+                    <p>Carolina Alves</p>
+                    <p>Instrutora Master certificada pelo THInK e com mais de 15 cursos de ThetaHealing®, incluindo Anatomia Intuitiva e Criança Arco-íris, com 1 ano de experiência trabalhando com adultos, jovens e meio corporativo.</p>
+                {% endblock seminar_instructor %}
+
+                {% block instructor_history %}
+                    <p>Tudo começou quando o ThetaHealing® mudou a minha vida, me apaixonei pela técnica e senti um chamado que eu precisava levar isso a mais pessoas.</p>
+                    <p>Todos nós temos padrões que nos impedem de viver nossa vida da forma que gostaríamos. Padrões que adquirimos durante toda nossa vida, assim, nos bloqueamos para as coisas boas que o Universo tem para nos dar.</p>
+                    <p>Minha missão é te ajudar a liberar esses padrões e viver seus sonhos e sua vida da maneira que você deseja!</p>
+                    <p>Vamos juntos?</p>
+                    <p>Carolina Alves,<br />
+                    Terapeuta apaixonada pela vida.</p>
+                {% endblock instructor_history %}
+
+                {% block seminar_date %}Sem data definida{% endblock seminar_date %}
+                {% block seminar_time %}sexta-feira das 18:00 às 22:00, sábado e domingo das 09:00 às 18:00{% endblock seminar_time %}
+                {% block seminar_location %}À confirmar{% endblock seminar_location %}
+
+                {% block seminar_inscription %}R$197,00 {% comment %}até o dia 10/07/2019, após este dia o valor é R$250,00{% endcomment %}{% endblock seminar_inscription %}
+                {% block seminar_price %}R$1.290,00{% endblock seminar_price %}
+
+                {% block seminar_url %}{% comment %}<a href='http://bit.ly/avancadoimfsp' target="_blank" >Clique aqui</a></p>{% endcomment %}Sem data prevista{% endblock seminar_url %}

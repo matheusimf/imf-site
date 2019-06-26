@@ -19,3 +19,6 @@ class BaseSeminar(View):
 
 class BasicDNASeminar(BaseSeminar):
     template_name = 'seminars/basic-dna.html'
+
+class AdvancedDNASeminar(BaseSeminar):
+    template_name = 'seminars/advanced-dna.html'
