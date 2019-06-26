@@ -18,4 +18,4 @@ class BaseSeminar(View):
         return render(request, self.template_name, context)
 
 class BasicDNASeminar(BaseSeminar):
-    template_name = 'seminars/base-seminars.html'
+    template_name = 'seminars/basic-dna.html'
