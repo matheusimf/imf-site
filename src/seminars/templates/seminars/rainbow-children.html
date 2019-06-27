@@ -1,0 +1,56 @@
+{% extends "seminars/base-seminars.html" %}
+{% load i18n %}
+{% load static from staticfiles %}
+
+                {% block seminar_title %}
+                    {% trans 'ThetaHealing® Criança Arco-Íris' %}
+                {% endblock seminar_title %}
+
+                {% block seminar_subtitle %}
+                    {% trans 'Desperte a criança interior que existe dentro de você e vejo o ThetaHealing® por uma ótica totalmente diferente e divertida.' %}
+                {% endblock seminar_subtitle %}
+
+                {% block seminar_image %}
+                    {% static 'core/img/crianca_arco_iris.png' %}
+                {% endblock seminar_image %}
+                {% block seminar_image_description %}
+                    {% trans 'Criança Arco-Íris - ThetaHealing' %}
+                {% endblock seminar_image_description %}
+
+                {% block seminar_content %}
+                    <p>Neste curso você passará por uma aventura e aprenderá como se conectar ao Criador de Tudo que É.</p>
+                    <p>Então você aprenderá uma grande gama de técnicas do ThetaHealing® como, por exemplo:
+                    <p>- Fazer trabalho de crenças e criar sentimentos positivos;</p>
+                    <p>- Fazer leituras empáticas;</p>
+                    <p>- Testemunhar curas físicas e na alma;</p>
+                    <p>- Aprender meditações guiadas divertidas;</p>
+                    <p>- Fazer leitura do futuro e de anjos da guarda;</p>
+                    <p>- Utilizar a telepatia e a telecinese;</p>
+                    <p>- Descobrir seu animal de poder;</p>
+                    <p>- Entender e acessar os planos da existência.</p>
+                    <p>Através dos 7 Planos de Existência você aprenderá formas maravilhosas de se comunicar com anjos e plantas; como curar com cristais; como conectar com animais de poder; desenvolver sua telecinese; como ver auras e curar animais.</p>
+                {% endblock seminar_content %}
+
+                {% block seminar_material %}
+                    <p>- Apostila</p>
+                    <p>- Coffee Break</p>
+                    <p>- Certificado internacional do THInK - EUA</p>
+                    <p>- Cadastro no site oficial do ThetaHealing®</p>
+                {% endblock seminar_material %}
+
+                {% block seminar_prereq%}
+                    <p>Não há pré-requisitos.</p>
+                    <p>Obs: Para adultos é recomendado ter feito o curso DNA Avançado, mas não é obrigatório.</p>
+                {% endblock seminar_prereq%}
+
+                {% comment %}-- Here goes the name of the instructors whom won't gonna teach the seminar -- {% endcomment %}
+                {% block matheus_instructor %}{% endblock matheus_instructor %}
+
+                {% block seminar_date %}22 e 26 de julho{% endblock seminar_date %}
+                {% block seminar_time %}Das 09:00 às 14:00{% endblock seminar_time %}
+                {% block seminar_location %}À confirmar{% endblock seminar_location %}
+
+                {% block seminar_inscription %}R$260,00 até o dia 17/07/2019, após este dia o valor é R$300,00{% endblock seminar_inscription %}
+                {% block seminar_price %}R$1.900,00{% endblock seminar_price %}
+
+                {% block seminar_url %}<a href='http://bit.ly/arcoirisimfsp' target="_blank" >Clique aqui</a></p>{% endblock seminar_url %}

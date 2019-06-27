@@ -1,7 +1,8 @@
 from django.urls import include, path, re_path
 
 from .views import (Seminars, BasicDNASeminar, AdvancedDNASeminar, YouAndCreatorSeminar,
-                    IntuitiveAnatomySeminar, InnerCircleSeminar, DNA3Seminar)
+                    IntuitiveAnatomySeminar, InnerCircleSeminar, DNA3Seminar,
+                    RainbowChildrenSeminar)
 
 urlpatterns = [
     re_path(r'^$', Seminars.as_view(), name='seminars'),
@@ -11,4 +12,5 @@ urlpatterns = [
     path('anatomia-intuitiva/', IntuitiveAnatomySeminar.as_view(), name='intuitive-anatomy'),
     path('voce-e-seu-circulo-intimo/', InnerCircleSeminar.as_view(), name='inner-circle'),
     path('dna3/', DNA3Seminar.as_view(), name='dna3'),
+    path('crianca-arco-iris/', RainbowChildrenSeminar.as_view(), name='rainbow-children'),
 ]

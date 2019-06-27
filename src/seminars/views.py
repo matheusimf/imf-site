@@ -34,3 +34,6 @@ class IntuitiveAnatomySeminar(BaseSeminar):
 
 class DNA3Seminar(BaseSeminar):
     template_name = 'seminars/dna3.html'
+
+class RainbowChildrenSeminar(BaseSeminar):
+    template_name = 'seminars/rainbow-children.html'
