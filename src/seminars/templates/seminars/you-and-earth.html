@@ -1,0 +1,45 @@
+{% extends "seminars/base-seminars.html" %}
+{% load i18n %}
+{% load static from staticfiles %}
+
+                {% block seminar_title %}
+                    {% trans 'ThetaHealing® Você e a Terra' %}
+                {% endblock seminar_title %}
+
+                {% block seminar_subtitle %}
+                    {% trans 'Entenda as energias que existem na Terra e como podemos ajudá-la a ficar cada vez melhor.' %}
+                {% endblock seminar_subtitle %}
+
+                {% block seminar_image %}
+                    {% static 'core/img/you-and-the-earth.png' %}
+                {% endblock seminar_image %}
+                {% block seminar_image_description %}
+                    {% trans 'Você e a Terra - ThetaHealing' %}
+                {% endblock seminar_image_description %}
+
+                {% block seminar_content %}
+                    <p>Aprenda a trabalhar com a Terra e a amar o seu mundo.</p>
+                {% endblock seminar_content %}
+
+                {% block seminar_material %}
+                    <p>- Apostila</p>
+                    <p>- Coffee Break</p>
+                    <p>- Certificado internacional do THInK - EUA</p>
+                {% endblock seminar_material %}
+
+                {% block seminar_prereq%}
+                    <p>DNA Básico, DNA Avançado e Aprofundando no Digging</p>
+                {% endblock seminar_prereq%}
+
+                {% comment %}-- Here goes the name of the instructors whom won't gonna teach the seminar -- {% endcomment %}
+                {% block matheus_instructor %}{% endblock matheus_instructor %}
+                {% block carol_instructor %}{% endblock carol_instructor %}
+
+                {% block seminar_date %}Sem data definida{% endblock seminar_date %}
+                {% block seminar_time %}Sábado e domingo das 09:00 às 18:00{% endblock seminar_time %}
+                {% block seminar_location %}À confirmar{% endblock seminar_location %}
+
+                {% block seminar_inscription %}R$197,00 {% comment %}até o dia 10/07/2019, após este dia o valor é R$250,00{% endcomment %}{% endblock seminar_inscription %}
+                {% block seminar_price %}R$1.290,00{% endblock seminar_price %}
+
+                {% block seminar_url %}{% comment %}<a href='http://bit.ly/terraimfsp' target="_blank" >Clique aqui</a></p>{% endcomment %}Sem data prevista{% endblock seminar_url %}

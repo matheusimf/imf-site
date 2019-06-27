@@ -1,0 +1,46 @@
+{% extends "seminars/base-seminars.html" %}
+{% load i18n %}
+{% load static from staticfiles %}
+
+                {% block seminar_title %}
+                    {% trans 'ThetaHealing® Planos de Existência' %}
+                {% endblock seminar_title %}
+
+                {% block seminar_subtitle %}
+                    {% trans 'Faça uma viagem pelo fantástico universo segundo Vianna.' %}
+                {% endblock seminar_subtitle %}
+
+                {% block seminar_image %}
+                    {% static 'core/img/planes.png' %}
+                {% endblock seminar_image %}
+                {% block seminar_image_description %}
+                    {% trans 'Planos de Existência - ThetaHealing' %}
+                {% endblock seminar_image_description %}
+
+                {% block seminar_content %}
+                    <p></p>
+                {% endblock seminar_content %}
+
+                {% block seminar_material %}
+                    <p>- Coffee Break</p>
+                    <p>- Certificado internacional do THInK - EUA</p>
+                {% endblock seminar_material %}
+
+                {% block seminar_prereq%}
+                    <p>DNA Básico, DNA Avançado, Aprofundando no Digging e Anatomia Intuitiva de praticante</p>
+                    <p>ou</p>
+                    <p>DNA Básico e DNA Avançado de instrutor</p>
+                {% endblock seminar_prereq%}
+
+                {% comment %}-- Here goes the name of the instructors whom won't gonna teach the seminar -- {% endcomment %}
+                {% block matheus_instructor %}{% endblock matheus_instructor %}
+                {% block carol_instructor %}{% endblock carol_instructor %}
+
+                {% block seminar_date %}Sem data definida{% endblock seminar_date %}
+                {% block seminar_time %}À confirmar{% endblock seminar_time %}
+                {% block seminar_location %}À confirmar{% endblock seminar_location %}
+
+                {% block seminar_inscription %}R$260,00 {% comment %}até o dia 10/07/2019, após este dia o valor é R$300,00{% endcomment %}{% endblock seminar_inscription %}
+                {% block seminar_price %}R$3.500,00{% endblock seminar_price %}
+
+                {% block seminar_url %}{% comment %}<a href='http://bit.ly/planosimfsp' target="_blank" >Clique aqui</a></p>{% endcomment %}Sem data prevista{% endblock seminar_url %}
