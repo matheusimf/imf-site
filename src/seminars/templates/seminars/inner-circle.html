@@ -1,0 +1,48 @@
+{% extends "seminars/base-seminars.html" %}
+{% load i18n %}
+{% load static from staticfiles %}
+
+                {% block seminar_title %}
+                    {% trans 'ThetaHealing® Você e seu Círculo Íntimo' %}
+                {% endblock seminar_title %}
+
+                {% block seminar_subtitle %}
+                    {% trans 'Entenda as pessoas ao seu redor, como e porque elas agem como agem e saiba como ter ao seu lado pessoas de confiança.' %}
+                {% endblock seminar_subtitle %}
+
+                {% block seminar_image %}
+                    {% static 'core/img/you-and-your-inner-circle.png' %}
+                {% endblock seminar_image %}
+                {% block seminar_image_description %}
+                    {% trans 'Você e seu Círculo Íntimo - ThetaHealing' %}
+                {% endblock seminar_image_description %}
+
+                {% block seminar_content %}
+                    <p>Você já se perguntou porque pessoas entram e saem da sua vida?</p>
+                    <p>Por que algumas pessoas tão próximas ficam afastadas e outras se aproximam?</p>
+                    <p>Por que você atrai as pessoas que não considera as certas para o que você precisa?</p>
+                    <p>No curso "Você e seu círculo íntimo" você vai entender os estágios da vida que cada pessoa passa e vai aprender a identificá-los.</p>
+                    <p>Com isto será possível ter ainda mais clareza das situações da sua vida e sobre a dinâmica das pessoas ao seu redor, ajudando assim no seu processo de evolução e da outra pessoa também.</p>
+                {% endblock seminar_content %}
+
+                {% block seminar_material %}
+                    <p>- Apostila</p>
+                    <p>- Coffee Break</p>
+                    <p>- Certificado internacional do THInK - EUA</p>
+                {% endblock seminar_material %}
+
+                {% block seminar_prereq%}
+                    <p>DNA Básico, DNA Avançado e Aprofundando no Digging</p>
+                {% endblock seminar_prereq%}
+
+                {% comment %}-- Here goes the name of the instructors whom won't gonna teach the seminar -- {% endcomment %}
+                {% block carol_instructor %}{% endblock carol_instructor %}
+
+                {% block seminar_date %}06 e 07 de julho{% endblock seminar_date %}
+                {% block seminar_time %}Das 16:00 às 22:00{% endblock seminar_time %}
+                {% block seminar_location %}À confirmar{% endblock seminar_location %}
+
+                {% block seminar_inscription %}R$197,00 até o dia 03/07/2019, após este dia o valor é R$250,00{% endblock seminar_inscription %}
+                {% block seminar_price %}R$1.290,00{% endblock seminar_price %}
+
+                {% block seminar_url %}<a href='http://bit.ly/circuloimfsp' target="_blank" >Clique aqui</a></p>{% endblock seminar_url %}

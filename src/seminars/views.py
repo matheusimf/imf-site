@@ -26,5 +26,8 @@ class AdvancedDNASeminar(BaseSeminar):
 class YouAndCreatorSeminar(BaseSeminar):
     template_name = 'seminars/you-and-creator.html'
 
+class InnerCircleSeminar(BaseSeminar):
+    template_name = 'seminars/inner-circle.html'
+
 class IntuitiveAnatomySeminar(BaseSeminar):
     template_name = 'seminars/intuitive-anatomy.html'
