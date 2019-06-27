@@ -22,3 +22,6 @@ class BasicDNASeminar(BaseSeminar):
 
 class AdvancedDNASeminar(BaseSeminar):
     template_name = 'seminars/advanced-dna.html'
+
+class YouAndCreatorSeminar(BaseSeminar):
+    template_name = 'seminars/you-and-creator.html'

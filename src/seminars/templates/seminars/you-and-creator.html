@@ -1,0 +1,47 @@
+{% extends "seminars/base-seminars.html" %}
+{% load i18n %}
+{% load static from staticfiles %}
+
+                {% block seminar_title %}
+                    {% trans 'ThetaHealing® Você e o Criador' %}
+                {% endblock seminar_title %}
+
+                {% block seminar_subtitle %}
+                    {% trans 'Entenda todas as vozes dentro de sua cabeça e tenha uma maior clareza ao escutar o Criador.' %}
+                {% endblock seminar_subtitle %}
+
+                {% block seminar_image %}
+                    {% static 'core/img/you-and-the-creator.png' %}
+                {% endblock seminar_image %}
+                {% block seminar_image_description %}
+                    {% trans 'Você e o Criador - ThetaHealing' %}
+                {% endblock seminar_image_description %}
+
+                {% block seminar_content %}
+                    <p>Neste curso você irá aprender a diferenciar todas as vozes que estão na sua cabeça, sabendo o que é seu consciente, seu sub-consciente e até mesmo se são de outros planos, inclusive saber diferenciar a verdadeira mensagem do Criador de Tudo que É.</p>
+                    <p>Tudo ficará mais claro na sua cabeça e isto te ajudará a entender as coisas que acontecem em sua vida e também ajudará no tratamento de seus clientes, sabendo o que fazer e de onde vem cada resposta deles.</p>
+                    <p>Este curso leva seu Digging para outro nível, sendo ainda mais fácil tratar seu clientes e até mesmo fazer um auto-digging. Você vai ver como resolver as coisas do seu dia-a-dia sem ter que se enrolar todo no processo.</p>
+                {% endblock seminar_content %}
+
+                {% block seminar_material %}
+                    <p>- Apostila</p>
+                    <p>- Coffee Break</p>
+                    <p>- Certificado internacional do THInK - EUA</p>
+                    <p>- Cadastro no site oficial do ThetaHealing®</p>
+                {% endblock seminar_material %}
+
+                {% block seminar_prereq%}
+                    <p>DNA Básico, DNA Avançado e Aprofundando no Digging</p>
+                {% endblock seminar_prereq%}
+
+                {% comment %}-- Here goes the name of the instructors whom won't gonna teach the seminar -- {% endcomment %}
+                {% block carol_instructor %}{% endblock carol_instructor %}
+
+                {% block seminar_date %}29 e 30 de junho{% endblock seminar_date %}
+                {% block seminar_time %}Das 09:00 às 18:00{% endblock seminar_time %}
+                {% block seminar_location %}À confirmar{% endblock seminar_location %}
+
+                {% block seminar_inscription %}R$197,00 até o dia 26/07/2019, após este dia o valor é R$250,00{% endblock seminar_inscription %}
+                {% block seminar_price %}R$1.290,00{% endblock seminar_price %}
+
+                {% block seminar_url %}<a href='http://bit.ly/criadorimfsp' target="_blank" >Clique aqui</a></p>{% endblock seminar_url %}
