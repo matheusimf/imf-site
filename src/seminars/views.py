@@ -23,6 +23,12 @@ class BasicDNASeminar(BaseSeminar):
 class AdvancedDNASeminar(BaseSeminar):
     template_name = 'seminars/advanced-dna.html'
 
+class DigDeeperSeminar(BaseSeminar):
+    template_name = 'seminars/dig-deeper.html'
+
+class ManifestingSeminar(BaseSeminar):
+    template_name = 'seminars/manifesting.html'
+
 class YouAndCreatorSeminar(BaseSeminar):
     template_name = 'seminars/you-and-creator.html'
 
