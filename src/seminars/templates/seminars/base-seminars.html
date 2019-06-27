@@ -2,6 +2,10 @@
 {% load i18n %}
 {% load static from staticfiles %}
 
+{% block postcss %}
+<link href="{% static 'seminars/css/seminars.css' %}" rel="stylesheet" />
+{% endblock postcss %}
+
 {% block active_seminars_menu %}active{% endblock active_seminars_menu %}
 
         {% block everything %}
@@ -14,7 +18,7 @@
                     {% block seminar_subtitle %}{% endblock seminar_subtitle %}
                 </p>
                 <div class="row">
-                    <img class="center-block img-fluid" src="{% block seminar_image %}{% endblock seminar_image %}" alt="{% block seminar_image_description %}{% endblock seminar_image_description %}"/>
+                    <img class="center-block img-fluid seminar-image" src="{% block seminar_image %}{% endblock seminar_image %}" alt="{% block seminar_image_description %}{% endblock seminar_image_description %}"/>
                 </div>
                 {% block what_is_thetahealing %}{% endblock what_is_thetahealing %}
                 <div class="row">
