@@ -31,3 +31,6 @@ class InnerCircleSeminar(BaseSeminar):
 
 class IntuitiveAnatomySeminar(BaseSeminar):
     template_name = 'seminars/intuitive-anatomy.html'
+
+class DNA3Seminar(BaseSeminar):
+    template_name = 'seminars/dna3.html'
