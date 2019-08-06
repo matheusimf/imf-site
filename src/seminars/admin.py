@@ -1,3 +1,11 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import (ClassMaterial, Instructor, SeminarType, SeminarLocation,
+                     Seminar)
+
+
+admin.site.register(ClassMaterial)
+admin.site.register(Instructor)
+admin.site.register(SeminarType)
+admin.site.register(SeminarLocation)
+admin.site.register(Seminar)
