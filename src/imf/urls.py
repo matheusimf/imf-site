@@ -20,10 +20,10 @@ from core.views import Home, AboutUs, Team, Services, Contact
 
 urlpatterns = [
     re_path(r'^$', Home.as_view(), name='home'),
-    path('aboutus/', AboutUs.as_view(), name='aboutus'),
-    path('team/', Team.as_view(), name='team'),
-    path('services/', Services.as_view(), name='services'),
-    path('seminars/', include(('seminars.urls', 'seminars'))),
-    path('contact/', Contact.as_view(), name='contact'),
+    path('sobre-nos/', AboutUs.as_view(), name='aboutus'),
+    path('time/', Team.as_view(), name='team'),
+    path('servicos/', Services.as_view(), name='services'),
+    path('cursos/', include(('seminars.urls', 'seminars'))),
+    path('contato/', Contact.as_view(), name='contact'),
     path('admin/', admin.site.urls),
 ]
