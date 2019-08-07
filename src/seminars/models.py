@@ -28,23 +28,40 @@ class SeminarType(models.Model):
     url = models.CharField(max_length=50)
     modality = models.IntegerField(choices=MODALITY_CHOICES, default=0)
     materials = models.ManyToManyField(ClassMaterial, blank=True)
-    prerequisites = models.ManyToManyField("self", blank=True)
+    prerequisites = models.ManyToManyField(
+        "self", through='SeminarTypePrerequisite',
+        symmetrical=False, blank=True
+    )
+    image_url = models.CharField(max_length=100, blank=True)
+    short_description = models.TextField(blank=True)
+    description = models.TextField(blank=True)
     early_inscription_price = models.DecimalField(
         max_digits=6, decimal_places=2, blank=True, null=True
     )
     inscription_price = models.DecimalField(
         max_digits=6, decimal_places=2, blank=True, null=True
     )
-    price = models.DecimalField(max_digits=7, decimal_places=2, blank=True)
-    price_parts = models.DecimalField(
-        max_digits=7, decimal_places=2, blank=True
+    price = models.DecimalField(
+        max_digits=7, decimal_places=2, blank=True, null=True
     )
-    max_number_parts = models.IntegerField(blank=True)
+    price_parts = models.DecimalField(
+        max_digits=7, decimal_places=2, blank=True, null=True
+    )
+    max_number_parts = models.IntegerField(blank=True, null=True)
     currency = models.IntegerField(choices=CURRENCY_CHOICES, default=0)
     creation_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.name
+
+
+class SeminarTypePrerequisite(models.Model):
+    from_seminartype = models.ForeignKey(
+        SeminarType, related_name='from_seminartype', on_delete=models.CASCADE
+    )
+    to_seminartype = models.ForeignKey(
+        SeminarType, related_name='to_seminartype', on_delete=models.CASCADE
+    )
 
 
 class Instructor(models.Model):
