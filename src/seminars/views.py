@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.http import Http404
 from django.shortcuts import render
 from django.views.generic import View
@@ -9,7 +10,18 @@ class Seminars(View):
     template_name = 'seminars/seminars.html'
 
     def get(self, request, *args, **kwargs):
-        context = {}
+        seminars_type = SeminarType.objects.all()
+        paginated_seminars = Paginator(seminars_type, 4)
+
+        # We will have a list of seminars with sublists of 4 seminars
+        # to display the right way on template
+        seminar_list = []
+        for page in paginated_seminars.page_range:
+            seminar_list.append(paginated_seminars.get_page(page))
+
+        context = {
+            'seminar_list': seminar_list,
+        }
         return render(request, self.template_name, context)
 
 
