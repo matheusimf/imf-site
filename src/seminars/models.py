@@ -25,6 +25,7 @@ class SeminarType(models.Model):
         (USD, 'Dólar')
     )
     name = models.CharField(max_length=100)
+    url = models.CharField(max_length=50)
     modality = models.IntegerField(choices=MODALITY_CHOICES, default=0)
     materials = models.ManyToManyField(ClassMaterial, blank=True)
     prerequisites = models.ManyToManyField("self", blank=True)

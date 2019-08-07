@@ -7,6 +7,9 @@ from .views import (Seminars, BasicDNASeminar, AdvancedDNASeminar,
                     WorldRelationsSeminar, SignificantOtherSeminar,
                     PlanesSeminar, DiseaseSeminar)
 
+# If change the PATH of any of these URLs need to change the url at DB.
+# We use it to generate the links at home, with the information stored
+# at DB.
 urlpatterns = [
     re_path(r'^$', Seminars.as_view(), name='seminars'),
     path('dna-basico/', BasicDNASeminar.as_view(), name='basic-dna'),
@@ -19,12 +22,12 @@ urlpatterns = [
     path('voce-e-o-criador/', YouAndCreatorSeminar.as_view(),
          name='you-and-creator'),
     path('voce-e-o-terra/', EarthSeminar.as_view(), name='you-and-earth'),
+    path('voce-e-seu-circulo-intimo/', InnerCircleSeminar.as_view(),
+         name='inner-circle'),
     path('anatomia-intuitiva/', IntuitiveAnatomySeminar.as_view(),
          name='intuitive-anatomy'),
     path('relacoes-mundiais/', WorldRelationsSeminar.as_view(),
          name='world-relations'),
-    path('voce-e-seu-circulo-intimo/', InnerCircleSeminar.as_view(),
-         name='inner-circle'),
     path('dna3/', DNA3Seminar.as_view(), name='dna3'),
     path('planos-de-existencia/', PlanesSeminar.as_view(), name='planes'),
     path('doencas-e-desordens/', DiseaseSeminar.as_view(),

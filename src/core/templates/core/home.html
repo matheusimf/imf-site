@@ -29,6 +29,7 @@
         </div>
         <!-- end #home -->
 
+        {% if next_seminars %}
         <!-- beign #next-seminars -->
         <div id="next-seminars" class="content" data-scrollview="true">
             <!-- begin container -->
@@ -37,184 +38,33 @@
                 <p class="content-desc">
                     {% trans 'Esta é a lista dos próximos cursos oferecidos pelo Universo Quântico em parceria com o IMF Desenvolvimento Humano' %}
                 </p>
+                {% comment %} Here start the next 3 seminars {% endcomment %}
+                {% for next_seminar in next_seminars %}
                 <!-- begin row -->
                 <div class="row">
                     <!-- begin col-4 -->
+                    {% for seminar in next_seminar %}
                     <div class="col-md-4 col-sm-4">
                         <div class="service">
                             <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-hand-o-right"></i></div>
                             <div class="info">
-                                <h4 class="title">{% trans 'DNA Básico - ThetaHealing®' %}</h4>
-                                <p class="desc">{% trans 'Data: 12, 13 e 14 de Junho' %}</p>
-                                <p class="desc">{% trans 'Local: São Paulo/SP' %}</p>
-                                <p class="desc"><a href="{% url 'seminars:basic-dna' %}">{% trans 'Saiba mais' %}</a></p>
+                                <h4 class="title">{{ seminar.seminar_type.name }} - {% if seminar.seminar_type.modality == 0 %}ThetaHealing®{% elif seminar.seminar_type.modality == 1 %}Access Consciousness®{% endif %}</h4>
+                                <p class="desc">{% trans 'Data:' %} {% language 'pt_BR' %}{{ seminar.start_date |date:"d F" }} a {{ seminar.end_date |date:"d F" }}{% endlanguage %}</p>
+                                <p class="desc">{% trans 'Local:' %} {{ seminar.location.city }}/{{ seminar.location.state }}</p>
+                                <p class="desc"><a href="{% url 'seminars:seminars' %}{{ seminar.seminar_type.url }}">{% trans 'Saiba mais' %}</a></p>
                             </div>
                         </div>
                     </div>
                     <!-- end col-4 -->
-                    <!-- begin col-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <div class="service">
-                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-hand-o-right"></i></div>
-                            <div class="info">
-                                <h4 class="title">{% trans 'DNA 3 - ThetaHealing®' %}</h4>
-                                <p class="desc">{% trans 'Data: 22 a 26 de Julho' %}</p>
-                                <p class="desc">{% trans 'Local: São Paulo/SP' %}</p>
-                                <p class="desc"><a href="{% url 'seminars:dna3' %}">{% trans 'Saiba mais' %}</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col-4 -->
-                    <!-- begin col-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <div class="service">
-                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-hand-o-right"></i></div>
-                            <div class="info">
-                                <h4 class="title">{% trans 'Criança arco-íris - ThetaHealing®' %}</h4>
-                                <p class="desc">{% trans 'Data: 22 a 26 de Julho' %}</p>
-                                <p class="desc">{% trans 'Local: São Paulo/SP' %}</p>
-                                <p class="desc"><a href="{% url 'seminars:rainbow-children' %}">{% trans 'Saiba mais' %}</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col-4 -->
+                    {% endfor %}
                 </div>
                 <!-- end row -->
-                <!-- begin row -->
-                <div class="row">
-                    <!-- begin col-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <div class="service">
-                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-hand-o-right"></i></div>
-                            <div class="info">
-                                <h4 class="title">{% trans 'Manifestação e Abundância - ThetaHealing®' %}</h4>
-                                <p class="desc">{% trans 'Data: 17 e 18 de Agosto' %}</p>
-                                <p class="desc">{% trans 'Local: São Paulo/SP' %}</p>
-                                <p class="desc"><a href="{% url 'seminars:manifesting' %}">{% trans 'Saiba mais' %}</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col-4 -->
-                    <!-- begin col-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <div class="service">
-                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-hand-o-right"></i></div>
-                            <div class="info">
-                                <h4 class="title">{% trans 'DNA Avançado - ThetaHealing®' %}</h4>
-                                <p class="desc">{% trans 'Data: 30 de Agosto a 01 de Setembro' %}</p>
-                                <p class="desc">{% trans 'Local: São Paulo/SP' %}</p>
-                                <p class="desc"><a href="{% url 'seminars:advanced-dna' %}">{% trans 'Saiba mais' %}</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col-4 -->
-                    <!-- begin col-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <div class="service">
-                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-hand-o-right"></i></div>
-                            <div class="info">
-                                <h4 class="title">{% trans 'Você e o Criador - ThetaHealing®' %}</h4>
-                                <p class="desc">{% trans 'Data: 07 e 08 de Setembro' %}</p>
-                                <p class="desc">{% trans 'Local: São Paulo/SP' %}</p>
-                                <p class="desc"><a href="{% url 'seminars:you-and-creator' %}">{% trans 'Saiba mais' %}</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col-4 -->
-                </div>
-                <!-- end row -->
-                {% comment %}
-                <!-- begin row -->
-                <div class="row">
-                    <!-- begin col-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <div class="service">
-                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-hand-o-right"></i></div>
-                            <div class="info">
-                                <h4 class="title">{% trans 'Você e a Terra - ThetaHealing®' %}</h4>
-                                <p class="desc">{% trans 'Data: 14 e 15 de Setembro' %}</p>
-                                <p class="desc">{% trans 'Local: São Paulo/SP' %}</p>
-                                <p class="desc"><a href="{% url 'seminars:you-and-earth' %}">{% trans 'Saiba mais' %}</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col-4 -->
-                    <!-- begin col-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <div class="service">
-                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-hand-o-right"></i></div>
-                            <div class="info">
-                                <h4 class="title">{% trans 'Você e seu Círculo Íntimo - ThetaHealing®' %}</h4>
-                                <p class="desc">{% trans 'Data: 21 e 22 de Setembro' %}</p>
-                                <p class="desc">{% trans 'Local: São Paulo/SP' %}</p>
-                                <p class="desc"><a href="{% url 'seminars:inner-circle' %}">{% trans 'Saiba mais' %}</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col-4 -->
-                    <!-- begin col-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <div class="service">
-                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-hand-o-right"></i></div>
-                            <div class="info">
-                                <h4 class="title">{% trans 'Relações Mundiais - ThetaHealing®' %}</h4>
-                                <p class="desc">{% trans 'Data: 23 a 27 de Setembro' %}</p>
-                                <p class="desc">{% trans 'Local: São Paulo/SP' %}</p>
-                                <p class="desc"><a href="{% url 'seminars:world-relations' %}">{% trans 'Saiba mais' %}</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col-4 -->
-                </div>
-                <!-- end row -->
-                <!-- begin row -->
-                <div class="row">
-                    <!-- begin col-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <div class="service">
-                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-hand-o-right"></i></div>
-                            <div class="info">
-                                <h4 class="title">{% trans 'Você e seu Parceiro - ThetaHealing®' %}</h4>
-                                <p class="desc">{% trans 'Data: 28 e 29 de Setembro' %}</p>
-                                <p class="desc">{% trans 'Local: São Paulo/SP' %}</p>
-                                <p class="desc"><a href="{% url 'seminars:significant-other' %}">{% trans 'Saiba mais' %}</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col-4 -->
-                    <!-- begin col-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <div class="service">
-                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-hand-o-right"></i></div>
-                            <div class="info">
-                                <h4 class="title">{% trans 'Anatomia Intuitiva - ThetaHealing®' %}</h4>
-                                <p class="desc">{% trans 'Data: 06 a 20 de Outubro' %}</p>
-                                <p class="desc">{% trans 'Local: Caxias do Sul/RS' %}</p>
-                                <p class="desc"><a href="{% url 'seminars:intuitive-anatomy' %}">{% trans 'Saiba mais' %}</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col-4 -->
-                    <!-- begin col-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <div class="service">
-                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-hand-o-right"></i></div>
-                            <div class="info">
-                                <h4 class="title">{% trans 'DNA 3 - ThetaHealing®' %}</h4>
-                                <p class="desc">{% trans 'Data: 23 a 27 de Outubro' %}</p>
-                                <p class="desc">{% trans 'Local: São Paulo/SP' %}</p>
-                                <p class="desc"><a href="{% url 'seminars:world-relations' %}">{% trans 'Saiba mais' %}</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col-4 -->
-                </div>
-                <!-- end row -->
-                {% endcomment %}
+                {% endfor %}
             </div>
             <!-- end container -->
         </div>
         <!-- end #next-seminars -->
+        {% endif %}
 
         <!-- begin #client -->
         <div id="client" class="content has-bg bg-green" data-scrollview="true">
