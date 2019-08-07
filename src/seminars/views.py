@@ -1,5 +1,8 @@
+from django.http import Http404
 from django.shortcuts import render
 from django.views.generic import View
+
+from .models import SeminarType
 
 
 class Seminars(View):
@@ -14,11 +17,21 @@ class BaseSeminar(View):
     template_name = 'seminars/base-seminars.html'
 
     def get(self, request, *args, **kwargs):
-        context = {}
+        seminar_url = self.kwargs['slug']
+
+        seminar = SeminarType.objects.filter(url=seminar_url).last()
+
+        if not seminar:
+            raise Http404()
+
+        context = {
+            'seminar': seminar,
+        }
+
         return render(request, self.template_name, context)
 
 class BasicDNASeminar(BaseSeminar):
-    template_name = 'seminars/basic-dna.html'
+    template_name = 'seminars/base-seminars.html'
 
 class AdvancedDNASeminar(BaseSeminar):
     template_name = 'seminars/advanced-dna.html'
