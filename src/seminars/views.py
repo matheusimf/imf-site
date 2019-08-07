@@ -3,7 +3,7 @@ from django.http import Http404
 from django.shortcuts import render
 from django.views.generic import View
 
-from .models import SeminarType
+from .models import Seminar, SeminarType
 
 
 class Seminars(View):
@@ -42,44 +42,22 @@ class BaseSeminar(View):
 
         return render(request, self.template_name, context)
 
-class BasicDNASeminar(BaseSeminar):
-    template_name = 'seminars/base-seminars.html'
+class SeminarsSchedule(View):
+    template_name = 'seminars/seminars_schedule.html'
 
-class AdvancedDNASeminar(BaseSeminar):
-    template_name = 'seminars/advanced-dna.html'
+    def get(self, request, *args, **kwargs):
+        # get the seminars and order then by start date
+        seminars = Seminar.objects.filter(seminar_status=0)
+        ordered_seminars = seminars.order_by('start_date')
+        paginated_seminars = Paginator(ordered_seminars, 3)
 
-class DigDeeperSeminar(BaseSeminar):
-    template_name = 'seminars/dig-deeper.html'
+        # We will have a list of seminars with sublists of 3 seminars
+        # to display the right way on template
+        seminar_list = []
+        for page in paginated_seminars.page_range:
+            seminar_list.append(paginated_seminars.get_page(page))
 
-class ManifestingSeminar(BaseSeminar):
-    template_name = 'seminars/manifesting.html'
-
-class SignificantOtherSeminar(BaseSeminar):
-    template_name = 'seminars/significant-other.html'
-
-class YouAndCreatorSeminar(BaseSeminar):
-    template_name = 'seminars/you-and-creator.html'
-
-class InnerCircleSeminar(BaseSeminar):
-    template_name = 'seminars/inner-circle.html'
-
-class EarthSeminar(BaseSeminar):
-    template_name = 'seminars/you-and-earth.html'
-
-class WorldRelationsSeminar(BaseSeminar):
-    template_name = 'seminars/world-relations.html'
-
-class IntuitiveAnatomySeminar(BaseSeminar):
-    template_name = 'seminars/intuitive-anatomy.html'
-
-class PlanesSeminar(BaseSeminar):
-    template_name = 'seminars/planes.html'
-
-class DNA3Seminar(BaseSeminar):
-    template_name = 'seminars/dna3.html'
-
-class DiseaseSeminar(BaseSeminar):
-    template_name = 'seminars/disease-and-disorder.html'
-
-class RainbowChildrenSeminar(BaseSeminar):
-    template_name = 'seminars/rainbow-children.html'
+        context = {
+            'seminar_list': seminar_list,
+        }
+        return render(request, self.template_name, context)

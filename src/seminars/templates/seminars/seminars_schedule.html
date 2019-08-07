@@ -1,0 +1,41 @@
+{% extends "core/base.html" %}
+{% load i18n %}
+{% load static from staticfiles %}
+
+{% block active_schedule_menu %}active{% endblock active_schedule_menu %}
+
+        {% block everything %}
+        <!-- begin #work -->
+        <div id="work" class="content" data-scrollview="true">
+            <!-- begin container -->
+            <div class="container" data-animation="true" data-animation-type="fadeInDown">
+                <h2 class="content-title">{% trans 'Agenda de Cursos' %}</h2>
+                <p class="content-desc">
+                    {% trans 'Abaixo estão todos os cursos planejados pelo Universo Quântico para os próximos meses. Eles serão oferecidos por nossos profissionais nas diversas técnicas que trabalhamos' %}
+                </p>
+                {% for next_seminars in seminar_list %}
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-4 -->
+                    {% for seminar in next_seminars %}
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service">
+                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-hand-o-right"></i></div>
+                            <div class="info">
+                                <h4 class="title">{{ seminar.seminar_type.name }} - {% if seminar.seminar_type.modality == 0 %}ThetaHealing®{% elif seminar.seminar_type.modality == 1 %}Access Consciousness®{% endif %}</h4>
+                                <p class="desc">{% trans 'Data:' %} {% language 'pt_BR' %}{{ seminar.start_date |date:"d F" }} a {{ seminar.end_date |date:"d F" }}{% endlanguage %}</p>
+                                <p class="desc">{% trans 'Local:' %} {{ seminar.location.city }}/{{ seminar.location.state }}</p>
+                                <p class="desc"><a href="{% url 'seminars:seminars' %}{{ seminar.seminar_type.url }}">{% trans 'Saiba mais' %}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col-4 -->
+                    {% endfor %}
+                </div>
+                <!-- end row -->
+                {% endfor %}
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #work -->
+        {% endblock everything %}

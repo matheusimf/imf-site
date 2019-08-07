@@ -78,6 +78,9 @@
                         <li class="{% block active_seminars_menu %}{% endblock active_seminars_menu %}">
                           <a href="{% url 'seminars:seminars' %}" data-click="scroll-to-target">{% trans 'CURSOS' %}</a>
                         </li>
+                        <li class="{% block active_schedule_menu %}{% endblock active_schedule_menu %}">
+                          <a href="{% url 'seminars:schedule' %}" data-click="scroll-to-target">{% trans 'AGENDA' %}</a>
+                        </li>
                         <li class="{% block active_contact_menu %}{% endblock active_contact_menu %}">
                           <a href="{% url 'contact' %}" data-click="scroll-to-target">{% trans 'CONTATO' %}</a>
                         </li>
