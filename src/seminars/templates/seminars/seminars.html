@@ -22,7 +22,7 @@
                         <!-- begin work -->
                         <div class="work">
                             <div class="image">
-                                <a href="{% url 'seminars:seminars' %}{{ seminar.url }}"><img src="{% static seminar.image_url %}" alt="{% trans 'DNA Básico - ThetaHealing' %}" /></a>
+                                <a href="{% url 'seminars:seminars' %}{{ seminar.url }}"><img src="{% static seminar.image_url %}" alt="{{ seminar.name }} - {% if seminar.modality == 0 %}ThetaHealing®{% elif seminar.modality == 1 %}Access Consciousness®{% endif %}" /></a>
                             </div>
                             <div class="desc">
                                 <span class="desc-title">{{ seminar.name }}</span>
