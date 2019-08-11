@@ -25,7 +25,7 @@
                                 <h4 class="title">{{ seminar.seminar_type.name }} - {% if seminar.seminar_type.modality == 0 %}ThetaHealing®{% elif seminar.seminar_type.modality == 1 %}Access Consciousness®{% endif %}</h4>
                                 <p class="desc">{% trans 'Data:' %} {% language 'pt_BR' %}{{ seminar.start_date |date:"d F" }} a {{ seminar.end_date |date:"d F" }}{% endlanguage %}</p>
                                 <p class="desc">{% trans 'Local:' %} {{ seminar.location.city }}/{{ seminar.location.state }}</p>
-                                <p class="desc"><a href="{% url 'seminars:seminars' %}{{ seminar.seminar_type.url }}">{% trans 'Saiba mais' %}</a></p>
+                                <p class="desc"><a href="{% url 'seminars:seminars' %}{{ seminar.seminar_type.url }}/{% language 'pt_BR' %}{{ seminar.start_date |date:"d-m-Y" }}{% endlanguage %}">{% trans 'Saiba mais' %}</a></p>
                             </div>
                         </div>
                     </div>
