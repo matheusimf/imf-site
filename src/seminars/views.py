@@ -1,7 +1,10 @@
 from django.core.paginator import Paginator
+from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
 from django.shortcuts import render
 from django.views.generic import View
+
+import datetime
 
 from .models import Seminar, SeminarType
 
@@ -31,16 +34,49 @@ class BaseSeminar(View):
     def get(self, request, *args, **kwargs):
         seminar_url = self.kwargs['slug']
 
-        seminar = SeminarType.objects.filter(url=seminar_url).last()
+        seminar_type = SeminarType.objects.filter(url=seminar_url).last()
 
-        if not seminar:
+        if not seminar_type:
+            raise Http404()
+
+        seminars = Seminar.objects.filter(
+            seminar_status=Seminar.ACTIVE, seminar_type=seminar_type
+        )
+
+        context = {
+            'seminar_type': seminar_type,
+        }
+
+        return render(request, self.template_name, context)
+
+
+class DateSeminar(View):
+    template_name = 'seminars/specific_seminar.html'
+
+    def get(self, request, *args, **kwargs):
+        #import ipdb; ipdb.set_trace()
+        seminar_url = self.kwargs['slug']
+        date = self.kwargs['date']
+
+        try:
+            seminar_date = datetime.datetime.strptime(date, "%d-%m-%Y")
+        except ValueError:
+            raise Http404()
+
+        try:
+            seminar = Seminar.objects.get(
+                seminar_type__url=seminar_url, start_date=seminar_date
+            )
+        except ObjectDoesNotExist:
             raise Http404()
 
         context = {
             'seminar': seminar,
+            'seminar_type': seminar.seminar_type,
         }
 
         return render(request, self.template_name, context)
+
 
 class SeminarsSchedule(View):
     template_name = 'seminars/seminars_schedule.html'

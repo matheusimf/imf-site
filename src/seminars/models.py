@@ -105,9 +105,10 @@ class Seminar(models.Model):
     end_time = models.IntegerField(blank=True, null=True)
     location = models.ForeignKey(SeminarLocation, on_delete=models.DO_NOTHING,
                                  blank=True, null=True)
-    instructor = models.ManyToManyField(Instructor, blank=True)
+    instructors = models.ManyToManyField(Instructor, blank=True)
     date_time_info = models.CharField(max_length=255, blank=True)
     seminar_status = models.IntegerField(choices=STATUS_CHOICES, default=0)
+    inscription_link = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         date = self.start_date.strftime('%d/%m/%y')

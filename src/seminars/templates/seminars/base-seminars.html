@@ -13,13 +13,14 @@
         <div class="content">
             <!-- begin container -->
             <div class="container">
-                <h2 class="content-title">{% if seminar.modality == 0 %}ThetaHealing®{% elif seminar.modality == 1 %}Access Consciousness®{% endif %} {{ seminar.name }}</h2>
-                <p class="content-desc">{{ seminar.short_description }}</p>
+                <h2 class="content-title">{% if seminar_type.modality == 0 %}ThetaHealing®{% elif seminar_type.modality == 1 %}Access Consciousness®{% endif %} {{ seminar_type.name }}</h2>
+                {% block seminar_date_info %}{% endblock seminar_date_info %}
+                <p class="content-desc">{{ seminar_type.short_description }}</p>
                 <div class="row">
-                    <img class="center-block img-fluid seminar-image" src="{% static seminar.image_url %}" alt="{{ seminar.name }} - {% if seminar.modality == 0 %}ThetaHealing®{% elif seminar.modality == 1 %}Access Consciousness®{% endif %}"/>
+                    <img class="center-block img-fluid seminar-image" src="{% static seminar_type.image_url %}" alt="{{ seminar_type.name }} - {% if seminar_type.modality == 0 %}ThetaHealing®{% elif seminar_type.modality == 1 %}Access Consciousness®{% endif %}"/>
                 </div>
 
-                {% if seminar.url == 'dna-basico' %}
+                {% if seminar_type.url == 'dna-basico' %}
                 <div class="row">
                     <h4>O que é o ThetaHealing®?</h4>
                     <p>ThetaHealing é um reencontro com sua essência.</p>
@@ -31,75 +32,26 @@
 
                 <div class="row">
                     <h4>O curso aborda:</h4>
-                    {{ seminar.description|linebreaks }}
+                    {{ seminar_type.description|linebreaks }}
                 </div>
                 <div class="row">
                     <h4>O curso inclui:</h4>
-                    {% for material in seminar.materials.all %}
+                    {% for material in seminar_type.materials.all %}
                     <p>- {{ material }}</p>
                     {% endfor %}
                 </div>
                 <div class="row">
                     <h4>Pré-requisitos:</h4>
-                    {% if seminar.prerequisites.all  %}
-                    {% for seminar in seminar.prerequisites.all %}
-                    <p>- {{ seminar.name }}
+                    {% if seminar_type.prerequisites.all  %}
+                    {% for seminar in seminar_type.prerequisites.all %}
+                    <p>- {{ seminar_type.name }}
                     {% endfor %}
                     {% else %}
                     <p>Não há pré-requisitos.</p>
                     {% endif %}
                 </div>
 
-
-
-
-                {% if seminario_marcado %}
-                <div class="row">
-                    <h4>Ministrado por:</h4>
-                    <p>{{ instructor_name }}</p>
-                    <p>{{ instructor_short_description }}</p>
-                </div>
-                <div class="row">
-                    <h4>Quem sou eu?</h4>
-                    {{ instructor_description|linebreaks }}
-                </div>
-                <div class="row">
-                    <h4>Data e local:</h4>
-                    <p>Data: {% block seminar_date %}{% endblock seminar_date %}</p>
-                    <p>Horário: {% block seminar_time %}{% endblock seminar_time %}</p>
-                    <p>Endereço: {% block seminar_location %}{% endblock seminar_location %}</p>
-                </div>
-                <div class="row">
-                    <h4>Pagamentos:</h4>
-                    <p>Para garantir sua vaga, é necessário o pagamento da taxa de inscrição.<br />
-                    Formas de pagamentos escolhidas como transferência bancária/depósito devem ser feitas na seguinte conta:</p>
-                </div>
-                <div class="row">
-                    <p>Banco: Bradesco<br />
-                    Agência:  6444<br />
-                    Conta: 0000851-6<br />
-                    Titular: Ana Carolina Alves Silva<br />
-                    CPF: 402.117.748-55</p>
-                    <p>*Após o pagamento da inscrição e/ou curso, deve ser enviado o comprovante para o e-mail: imfterapiasfinanceiro@gmail.com ou WhatsApp: +5511996495349.</p>
-                    <p>*Sua inscrição só será confirmada após a confirmação do pagamento da mesma.</p>
-                    <p>*Formas de pagamento via cartão de crédito deve ser solicitado o link no WhatsApp.</p>
-                    <p>*A inscrição é não reembolsável e pode ser utilizada para próximos cursos.</p>
-                </div>
-                <div class="row">
-                    <h4>Investimento:</h4>
-                    <p>Inscrição: {% block seminar_inscription %}{% endblock seminar_inscription %}</p>
-                    <p>Curso à vista: {% block seminar_price %}{% endblock seminar_price %}</p>
-                    <p>Curso parcelado: Entre em contato para informações de pagamento parcelado</p>
-                </div>
-                <div class="row">
-                    <h4>Inscrição:</h4>
-                    <p>{% block seminar_url %}{% endblock seminar_url %}</p>
-                </div>
-                {% endif %}
-
-
-
-
+                {% block seminar_info %}{% endblock seminar_info %}
 
             </div>
             <!-- end container -->
