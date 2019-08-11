@@ -51,6 +51,15 @@
                     {% endif %}
                 </div>
 
+                {% if next_seminars %}
+                <div class="row">
+                    <h4>Próximos seminários de {{ seminar_type.name }} ministrados pelo Universo Quântico:</h4>
+                    {% for next_seminar in next_seminars%}
+                    <p><a href="{% url 'seminars:seminars' %}{{ next_seminar.seminar_type.url }}/{% language 'pt_BR' %}{{ next_seminar.start_date |date:"d-m-Y" }}{% endlanguage %}">{{ next_seminar }}</a></p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
                 {% block seminar_info %}{% endblock seminar_info %}
 
             </div>
