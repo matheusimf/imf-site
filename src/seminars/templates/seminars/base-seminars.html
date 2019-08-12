@@ -43,8 +43,8 @@
                 <div class="row">
                     <h4>Pré-requisitos:</h4>
                     {% if seminar_type.prerequisites.all  %}
-                    {% for seminar in seminar_type.prerequisites.all %}
-                    <p>- {{ seminar_type.name }}
+                    {% for seminar_pre in seminar_type.prerequisites.all %}
+                    <p>- {{ seminar_pre.name }}
                     {% endfor %}
                     {% else %}
                     <p>Não há pré-requisitos.</p>
