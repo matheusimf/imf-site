@@ -19,7 +19,22 @@
                 <div class="row">
                     <h4>Quem sou eu?</h4>
                     {% for instructor in seminar.instructors.all %}
-                    {{ instructor.description|linebreaks }}
+                    {% if instructor.pk == 1 %}
+                    <div class="team">
+                        <div class="image">
+                            <img class="mini-image" src="{% static 'core/img/matheus_figueiredo.jpeg' %}" alt="Matheus Figueiredo" />
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="team">
+                        <div class="image">
+                            <img class="mini-image" src="{% static 'core/img/carolina_alves.jpeg' %}" alt="Carolina Alves" />
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="text-center">
+                        {{ instructor.description|linebreaks }}<br />
+                    </div>
                     {% endfor %}
                 </div>
                 <div class="row">
