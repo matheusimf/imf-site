@@ -1,11 +1,6 @@
 .brand-logo.main-header {
   border: none;
-  margin-top: -15px;
-}
-@media only screen and (max-width: 500px) {
-  .brand-logo.main-header {
-    margin-top: -25px;
-  }
+  margin-top: -18px;
 }
 
 .logo-image{
@@ -13,7 +8,17 @@
 }
 
 .footer-logo-image{
-  height: 100px;
+  width: 500px;
+}
+
+@media only screen and (max-width: 992px) {
+  .footer-logo-image{
+    width: 300px;
+  }
+}
+
+.footer {
+  background: #203460;
 }
 
 .container .content-title {
