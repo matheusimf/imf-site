@@ -25,10 +25,16 @@
                             <img class="mini-image" src="{% static 'core/img/matheus_figueiredo.jpeg' %}" alt="Matheus Figueiredo" />
                         </div>
                     </div>
-                    {% else %}
+                    {% elif instructor.pk == 2 %}
                     <div class="team">
                         <div class="image">
                             <img class="mini-image" src="{% static 'core/img/carolina_alves.jpeg' %}" alt="Carolina Alves" />
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="team">
+                        <div class="image">
+                            <img class="mini-image" src="{% static 'core/img/raquel_marins.jpeg' %}" alt="Raquel Marins" />
                         </div>
                     </div>
                     {% endif %}
