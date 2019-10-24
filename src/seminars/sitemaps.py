@@ -12,7 +12,7 @@ class SeminarTypeViewSitemap(sitemaps.Sitemap):
         return SeminarType.objects.all()
 
     def location(self, item):
-        return '/cursos/%s'%(item.url)
+        return '/cursos/%s/'%(item.url)
 
 
 class SeminarViewSitemap(sitemaps.Sitemap):
@@ -24,5 +24,5 @@ class SeminarViewSitemap(sitemaps.Sitemap):
 
     def location(self, item):
         seminar_type = item.seminar_type.url
-        date = item.start_date.strftime('%d-%m-%y')
-        return '/cursos/%s/%s'%(seminar_type, date)
+        date = item.start_date.strftime('%d-%m-%Y')
+        return '/cursos/%s/%s/'%(seminar_type, date)
