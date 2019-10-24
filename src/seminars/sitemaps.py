@@ -24,5 +24,5 @@ class SeminarViewSitemap(sitemaps.Sitemap):
 
     def location(self, item):
         seminar_type = item.seminar_type.url
-        date = item.start_date.strftime('%d/%m/%y')
+        date = item.start_date.strftime('%d-%m-%y')
         return '/%s/%s'%(seminar_type, date)
