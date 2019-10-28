@@ -49,3 +49,14 @@
 .white {
   color: white;
 }
+
+.btn.sign-up-theme {
+  background: #DE7B55;
+  border-color: #DE7B55;
+  color: white;
+}
+
+.btn.sign-up-theme:hover {
+  background: #203460;
+  border-color: #203460;
+}
