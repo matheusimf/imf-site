@@ -51,16 +51,41 @@
                     {% endif %}
                 </div>
 
-                {% if next_seminars %}
-                <div class="row">
-                    <h4>Próximos seminários de {{ seminar_type.name }} ministrados pelo Universo Quântico:</h4>
-                    {% for next_seminar in next_seminars%}
-                    <p><a href="{% url 'seminars:seminars' %}{{ next_seminar.seminar_type.url }}/{% language 'pt_BR' %}{{ next_seminar.start_date |date:"d-m-Y" }}{% endlanguage %}">{{ next_seminar }} - {{ next_seminar.location.city }}/{{ next_seminar.location.state }}</a></p>
-                    {% endfor %}
+                {% block seminar_info %}
+                <div class="row text-center">
+                    <h4>Avise-me sobre os próximos seminários de {{ seminar_type.name }} ministrados pelo Universo Quântico:</h4>
                 </div>
-                {% endif %}
-
-                {% block seminar_info %}{% endblock seminar_info %}
+                <div class="row">
+                    <div class="col-md-6 form-col col-md-offset-3" data-animation="true" data-animation-type="fadeInRight">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Nome <span class="text-theme">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">E-mail <span class="text-theme">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Telefone <span class="text-theme">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3"></label>
+                                <div class="col-md-9 text-left">
+                                    <button type="submit" class="btn sign-up-theme btn-block">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                {% endblock seminar_info %}
 
             </div>
             <!-- end container -->

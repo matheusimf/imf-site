@@ -39,13 +39,8 @@ class BaseSeminar(View):
         if not seminar_type:
             raise Http404()
 
-        next_seminars = Seminar.objects.filter(
-            seminar_status=Seminar.ACTIVE, seminar_type=seminar_type
-        )
-
         context = {
             'seminar_type': seminar_type,
-            'next_seminars': next_seminars,
         }
 
         return render(request, self.template_name, context)
