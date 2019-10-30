@@ -14,11 +14,12 @@
             <!-- begin container -->
             <div class="container">
                 <h2 class="content-title">{% if seminar_type.modality == 0 %}ThetaHealing®{% elif seminar_type.modality == 1 %}Access Consciousness®{% endif %} {{ seminar_type.name }}</h2>
-                {% block seminar_date_info %}{% endblock seminar_date_info %}
                 <p class="content-desc">{{ seminar_type.short_description }}</p>
                 <div class="row">
                     <img class="center-block img-fluid seminar-image" src="{% static seminar_type.image_url %}" alt="{{ seminar_type.name }} - {% if seminar_type.modality == 0 %}ThetaHealing®{% elif seminar_type.modality == 1 %}Access Consciousness®{% endif %}"/>
                 </div>
+
+                {% include "seminars/pre_sign_up_form.html" %}
 
                 {% if seminar_type.url == 'dna-basico' %}
                 <div class="row">
@@ -34,58 +35,13 @@
                     <h4>O curso aborda:</h4>
                     {{ seminar_type.description|linebreaks }}
                 </div>
-                <div class="row">
-                    <h4>O curso inclui:</h4>
-                    {% for material in seminar_type.materials.all %}
-                    <p>- {{ material }}</p>
-                    {% endfor %}
-                </div>
-                <div class="row">
-                    <h4>Pré-requisitos:</h4>
-                    {% if seminar_type.prerequisites.all  %}
-                    {% for seminar_pre in seminar_type.prerequisites.all %}
-                    <p>- {{ seminar_pre.name }}
-                    {% endfor %}
-                    {% else %}
-                    <p>Não há pré-requisitos.</p>
-                    {% endif %}
-                </div>
 
-                {% block seminar_info %}
-                <div class="row text-center">
-                    <h4>Avise-me sobre os próximos seminários de {{ seminar_type.name }} ministrados pelo Universo Quântico:</h4>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 form-col col-md-offset-3" data-animation="true" data-animation-type="fadeInRight">
-                        <form class="form-horizontal">
-                            <div class="form-group">
-                                <label class="control-label col-md-3">Nome <span class="text-theme">*</span></label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-md-3">E-mail <span class="text-theme">*</span></label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-md-3">Telefone <span class="text-theme">*</span></label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-md-3"></label>
-                                <div class="col-md-9 text-left">
-                                    <button type="submit" class="btn sign-up-theme btn-block">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                {% endblock seminar_info %}
+                {% block seminar_info %}{% endblock seminar_info %}
+
+                {% block seminar_materials %}{% endblock seminar_materials %}
+                {% block seminar_pre_requisites %}{% endblock seminar_pre_requisites %}
+                {% block next_seminars %}{% endblock next_seminars %}
+                {% include "seminars/pre_sign_up_form.html" %}
 
             </div>
             <!-- end container -->

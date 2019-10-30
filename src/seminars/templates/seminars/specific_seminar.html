@@ -2,82 +2,29 @@
 {% load i18n %}
 {% load static from staticfiles %}
 
-                {% block seminar_date_info %}
-                <h3 class="text-center">{% language 'pt_BR' %}{{ seminar.start_date |date:"d F" }} a {{ seminar.end_date |date:"d F - Y" }}{% endlanguage %}</h3>
-                <h3 class="text-center">{{ seminar.location.city }}/{{ seminar.location.state }}</h3>
-                {% endblock seminar_date_info %}
-
-
-                {% block seminar_info %}
+                {% block seminar_materials %}
                 <div class="row">
-                    <h4>Ministrado por:</h4>
-                    {% for instructor in seminar.instructors.all %}
-                    <p>{{ instructor.name }}</p>
-                    <p>{{ instructor.short_description }}</p>
+                    <h4>O curso inclui:</h4>
+                    {% for material in seminar_type.materials.all %}
+                    <p>- {{ material }}</p>
                     {% endfor %}
                 </div>
+                {% endblock seminar_materials %}
+                {% block seminar_pre_requisites %}
                 <div class="row">
-                    <h4>Quem sou eu?</h4>
-                    {% for instructor in seminar.instructors.all %}
-                    {% if instructor.pk == 1 %}
-                    <div class="team">
-                        <div class="image">
-                            <img class="mini-image" src="{% static 'core/img/matheus_figueiredo.jpeg' %}" alt="Matheus Figueiredo" />
-                        </div>
-                    </div>
-                    {% elif instructor.pk == 2 %}
-                    <div class="team">
-                        <div class="image">
-                            <img class="mini-image" src="{% static 'core/img/carolina_alves.jpeg' %}" alt="Carolina Alves" />
-                        </div>
-                    </div>
+                    <h4>Pré-requisitos:</h4>
+                    {% if seminar_type.prerequisites.all  %}
+                    {% for seminar_pre in seminar_type.prerequisites.all %}
+                    <p>- {{ seminar_pre.name }}
+                    {% endfor %}
                     {% else %}
-                    <div class="team">
-                        <div class="image">
-                            <img class="mini-image" src="{% static 'core/img/raquel_marins.jpeg' %}" alt="Raquel Marins" />
-                        </div>
-                    </div>
+                    <p>Não há pré-requisitos.</p>
                     {% endif %}
-                    <div class="text-center">
-                        {{ instructor.description|linebreaks }}<br />
-                    </div>
-                    {% endfor %}
                 </div>
-                <div class="row">
-                    <h4>Data e local:</h4>
-                    <p>Data: {% language 'pt_BR' %}{{ seminar.start_date |date:"d F" }} a {{ seminar.end_date |date:"d F" }}{% endlanguage %}</p>
-                    <p>Horário: {% if seminar.date_time_info %}{{ seminar.date_time_info }}{% else %}Das {{ seminar.start_time }} até {{ seminar.end_time }}{% endif %}</p>
-                    <p>Endereço: {{ seminar.location.street }} {% if seminar.location.number %}{{ seminar.location.number }} {% endif %}{{ seminar.location.complement }} - {{ seminar.location.district }} - {{ seminar.location.city }}/{{ seminar.location.state }}</p>
-                </div>
-                <div class="row">
-                    <h4>Pagamentos:</h4>
-                    <p>Para garantir sua vaga, é necessário o pagamento da taxa de inscrição.<br />
-                    Formas de pagamentos escolhidas como transferência bancária/depósito devem ser feitas na seguinte conta:</p>
-                </div>
-                <div class="row">
-                    <p>Banco: Bradesco<br />
-                    Agência:  6444<br />
-                    Conta: 0000851-6<br />
-                    Titular: Ana Carolina Alves Silva<br />
-                    CPF: 402.117.748-55</p>
-                    <p>*Após o pagamento da inscrição e/ou curso, deve ser enviado o comprovante para o e-mail: imfterapiasfinanceiro@gmail.com ou WhatsApp: +55 11 99649-5346.</p>
-                    <p>*Sua inscrição só será confirmada após a confirmação do pagamento da mesma.</p>
-                    <p>*Formas de pagamento via cartão de crédito deve ser solicitado o link no WhatsApp.</p>
-                    <p>*A inscrição é não reembolsável e pode ser utilizada para próximos cursos.</p>
-                </div>
-                <div class="row">
-                    <h4>Investimento:</h4>
-                    <p>Inscrição: {{ seminar_type.early_inscription_price }}</p>
-                    <p>Curso à vista: {{ seminar_type.price }}</p>
-                    <p>Curso parcelado: Entre em contato para informações de pagamento parcelado</p>
-                </div>
-                <div class="row">
-                    <h4>Inscrição:</h4>
-                    <p><a href="{{ seminar.inscription_link }}" class="btn btn-block sign-up-theme" target="_blank">Inscreva-se</a></p>
-                </div>
-                {% endblock seminar_info %}
+                {% endblock seminar_pre_requisites %}
 
-
-
-
-
+                {% block next_seminars %}
+                <div class="row text-center">
+                    <h4>Avise-me sobre os próximos seminários de {{ seminar_type.name }} ministrados pelo Universo Quântico:</h4>
+                </div>
+                {% endblock next_seminars %}

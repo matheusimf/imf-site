@@ -29,7 +29,7 @@ class Seminars(View):
 
 
 class BaseSeminar(View):
-    template_name = 'seminars/base-seminars.html'
+    template_name = 'seminars/specific_seminar.html'
 
     def get(self, request, *args, **kwargs):
         seminar_url = self.kwargs['slug']
@@ -47,10 +47,9 @@ class BaseSeminar(View):
 
 
 class DateSeminar(View):
-    template_name = 'seminars/specific_seminar.html'
+    template_name = 'seminars/dated_specific_seminar.html'
 
     def get(self, request, *args, **kwargs):
-        #import ipdb; ipdb.set_trace()
         seminar_url = self.kwargs['slug']
         date = self.kwargs['date']
 
