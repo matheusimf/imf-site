@@ -69,11 +69,11 @@
                         <li class="{% block active_aboutus_menu %}{% endblock active_aboutus_menu %}">
                           <a href="{% url 'aboutus' %}" data-click="scroll-to-target">{% trans 'SOBRE NÓS' %}</a>
                         </li>
-                        <li class="{% block active_team_menu %}{% endblock active_team_menu %}">
-                          <a href="{% url 'team' %}" data-click="scroll-to-target">{% trans 'TIME' %}</a>
-                        </li>
                         <li class="{% block active_services_menu %}{% endblock active_services_menu %}">
                           <a href="{% url 'services' %}" data-click="scroll-to-target">{% trans 'SERVIÇOS' %}</a>
+                        </li>
+                        <li class="{% block active_team_menu %}{% endblock active_team_menu %}">
+                          <a href="{% url 'team' %}" data-click="scroll-to-target">{% trans 'TIME' %}</a>
                         </li>
                         <li class="{% block active_seminars_menu %}{% endblock active_seminars_menu %}">
                           <a href="{% url 'seminars:seminars' %}" data-click="scroll-to-target">{% trans 'CURSOS' %}</a>
