@@ -13,6 +13,7 @@ class Seminars(View):
     template_name = 'seminars/seminars.html'
 
     def get(self, request, *args, **kwargs):
+        # show the different types of seminars that we teach
         seminars_type = SeminarType.objects.all()
         paginated_seminars = Paginator(seminars_type, 4)
 
@@ -32,6 +33,7 @@ class BaseSeminar(View):
     template_name = 'seminars/specific_seminar.html'
 
     def get(self, request, *args, **kwargs):
+        # these are the general desciption for seminars with no schecule
         seminar_url = self.kwargs['slug']
 
         seminar_type = SeminarType.objects.filter(url=seminar_url).last()
@@ -50,6 +52,7 @@ class DateSeminar(View):
     template_name = 'seminars/dated_specific_seminar.html'
 
     def get(self, request, *args, **kwargs):
+        # these are the specific seminars with date aready
         seminar_url = self.kwargs['slug']
         date = self.kwargs['date']
 
@@ -77,6 +80,8 @@ class SeminarsSchedule(View):
     template_name = 'seminars/seminars_schedule.html'
 
     def get(self, request, *args, **kwargs):
+        # these are the homepage seminars
+
         # get the seminars and order then by start date
         seminars = Seminar.objects.filter(seminar_status=0)
         ordered_seminars = seminars.order_by('start_date')
