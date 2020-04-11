@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['universoquantico.com', 'localhost']
 
+AUTH_USER_MODEL = 'core.User'
+
 
 # Application definition
 
