@@ -41,9 +41,34 @@
                 {% block next_seminars %}{% endblock next_seminars %}
                 {% block seminar_inscription %}{% endblock seminar_inscription %}
 
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content form-style">
+                        <span class="close">&times;</span>
+                        <div class="row">
+                            <h3>Venha viver essa mudança conosco!</h3>
+                            <form>
+                                <fieldset>
+                                    <input type="text" name="name" placeholder="Nome *">
+                                    <input type="text" name="phone" placeholder="Telefone *">
+                                    <input type="text" name="email" placeholder="E-mail *">
+                                </fieldset>
+                                <input type="submit" value="Me inscrever!" />
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
             <!-- end container -->
         </div>
         <!-- end #work -->
         {% endblock everything %}
+
+        {% block javascript %}
+            {{ block.super }}
+            <script src="{% static 'seminars/js/modal.js' %}"></script>
+        {% endblock javascript %}
