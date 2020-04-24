@@ -24,7 +24,5 @@
                 {% endblock seminar_pre_requisites %}
 
                 {% block next_seminars %}
-                <div class="row text-center">
-                    <h4>Avise-me sobre os próximos seminários de {{ seminar_type.name }} ministrados pelo Universo Quântico:</h4>
-                </div>
+                {% include "seminars/pre_sign_up_form.html" %}
                 {% endblock next_seminars %}

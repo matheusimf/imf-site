@@ -108,3 +108,14 @@
   background: #de7b55;
   border: 2px solid #de7b55;
 }
+
+.inscription {
+  background: none;
+}
+
+.inscription input[type="submit"]:hover,
+.inscription input[type="button"]:hover
+{
+  background: #3a5584;
+  border: 2px solid #3a5584;
+}

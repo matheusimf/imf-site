@@ -19,8 +19,6 @@
                     <img class="center-block img-fluid seminar-image" src="{% static seminar_type.image_url %}" alt="{{ seminar_type.name }} - {% if seminar_type.modality == 0 %}ThetaHealing®{% elif seminar_type.modality == 1 %}Access Consciousness®{% endif %}"/>
                 </div>
 
-                {% include "seminars/pre_sign_up_form.html" %}
-
                 {% if seminar_type.url == 'dna-basico' %}
                 <div class="row">
                     <h4>O que é o ThetaHealing®?</h4>
@@ -41,7 +39,8 @@
                 {% block seminar_materials %}{% endblock seminar_materials %}
                 {% block seminar_pre_requisites %}{% endblock seminar_pre_requisites %}
                 {% block next_seminars %}{% endblock next_seminars %}
-                {% include "seminars/pre_sign_up_form.html" %}
+                {% block seminar_inscription %}{% endblock seminar_inscription %}
+
 
             </div>
             <!-- end container -->
