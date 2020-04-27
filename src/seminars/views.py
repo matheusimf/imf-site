@@ -128,6 +128,13 @@ class SeminarInscriptionView(View):
         except ObjectDoesNotExist:
             raise Http404()
 
+        SeminarInscription.objects.create(
+            seminar = seminar,
+            name = name,
+            phone = phone,
+            email = email,
+        )
+
         context = {
             'seminar': seminar,
         }
