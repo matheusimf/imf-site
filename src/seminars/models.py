@@ -122,3 +122,7 @@ class SeminarInscription(models.Model):
     phone = models.CharField(max_length=30)
     email = models.EmailField(max_length=100)
     date = models.DateField(default=timezone.now)
+
+    def __str__(self):
+        seminar = self.seminar.__str__()
+        return  seminar + ': ' + self.name + ' - ' + self.email

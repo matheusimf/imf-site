@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from .models import (ClassMaterial, Instructor, SeminarType, SeminarLocation,
-                     Seminar, SeminarTypePrerequisite)
+                     Seminar, SeminarTypePrerequisite, SeminarInscription)
 
 
 class PrerequisiteInline(admin.StackedInline):
@@ -18,3 +18,4 @@ admin.site.register(Instructor)
 admin.site.register(SeminarType, SeminarTypeAdmin)
 admin.site.register(SeminarLocation)
 admin.site.register(Seminar)
+admin.site.register(SeminarInscription)
