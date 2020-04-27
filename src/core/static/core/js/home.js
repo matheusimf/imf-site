@@ -19,7 +19,6 @@ $(function() {
 
     // Get the padding-top for the image to keep it's dimensions
     imagePadding = $('.main-image').css('padding-top')
-    console.log(imagePadding)
     paddingToAdd = parseInt(imagePadding);
 
     // Giving the home page the proper height

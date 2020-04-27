@@ -31,12 +31,11 @@
                 </div>
 
                 {% if seminar_type.url == 'dna-basico' %}
-                <div class="row">
+                <div class="row text-center">
                     <h4>O que é o ThetaHealing®?</h4>
-                    <p>ThetaHealing é um reencontro com sua essência.</p>
-                    <p>É uma técnica de cura energética que irá te ensinar a identificar e liberar crenças e padrões que te impedem de ser feliz.</p>
-                    <p>Através desta ferramenta simples, que qualquer pessoa pode acessar, você aprende a olhar para dentro, se reconectando profundamente com sua essência. Você aprende a curar, a perdoar, a se realizar, vivendo de uma forma abundante, saudável e plena.</p>
-                    <p>São crescentes as comprovações científicas de que nossas crenças e emoções negativas geram doenças físicas, mentais e emocionais e nos bloqueiam de realizar algo que nos faz pleno e feliz. Precisamos liberar ressentimentos e tristezas antigas, culpas e medos para poder viver a vida em seu potencial máximo.</p>
+                    <div class="row">
+                        <iframe class="col-md-8 col-md-offset-2" height="" src="https://www.youtube.com/embed/IhrR4Oj2nUg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
                 </div>
                 {% endif %}
 
@@ -61,4 +60,5 @@
         {% block javascript %}
             {{ block.super }}
             <script src="{% static 'seminars/js/modal.js' %}"></script>
+            <script src="{% static 'core/js/youtube.js' %}"></script>
         {% endblock javascript %}
