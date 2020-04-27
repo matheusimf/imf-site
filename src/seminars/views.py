@@ -8,10 +8,10 @@ from django.views.generic import View
 import datetime
 
 from .forms import SeminarInscriptionForm
-from .models import Seminar, SeminarType
+from .models import Seminar, SeminarType, SeminarInscription
 
 
-class Seminars(View):
+class SeminarsView(View):
     template_name = 'seminars/seminars.html'
 
     def get(self, request, *args, **kwargs):
@@ -31,7 +31,7 @@ class Seminars(View):
         return render(request, self.template_name, context)
 
 
-class BaseSeminar(View):
+class BaseSeminarView(View):
     template_name = 'seminars/specific_seminar.html'
 
     def get(self, request, *args, **kwargs):
@@ -50,7 +50,7 @@ class BaseSeminar(View):
         return render(request, self.template_name, context)
 
 
-class DateSeminar(View):
+class DateSeminarView(View):
     template_name = 'seminars/dated_specific_seminar.html'
 
     def get(self, request, *args, **kwargs):
@@ -78,7 +78,7 @@ class DateSeminar(View):
         return render(request, self.template_name, context)
 
 
-class SeminarsSchedule(View):
+class SeminarsScheduleView(View):
     template_name = 'seminars/seminars_schedule.html'
 
     def get(self, request, *args, **kwargs):
@@ -101,7 +101,7 @@ class SeminarsSchedule(View):
         return render(request, self.template_name, context)
 
 
-class SeminarInscription(View):
+class SeminarInscriptionView(View):
     template_name = 'seminars/inscription_success.html'
 
     def post(self, request, *args, **kwargs):
