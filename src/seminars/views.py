@@ -1,11 +1,12 @@
 from django.core.paginator import Paginator
 from django.core.exceptions import ObjectDoesNotExist
-from django.http import Http404
+from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import render
 from django.views.generic import View
 
 import datetime
 
+from .forms import SeminarInscriptionForm
 from .models import Seminar, SeminarType
 
 
@@ -96,4 +97,33 @@ class SeminarsSchedule(View):
         context = {
             'seminar_list': seminar_list,
         }
+        return render(request, self.template_name, context)
+
+
+class SeminarInscription(View):
+    template_name = 'seminars/inscription_success.html'
+
+    def post(self, request, *args, **kwargs):
+        seminar_id = request.POST.get('seminar')
+        name = request.POST.get('name')
+        ddi = request.POST.get('ddi')
+        phone = request.POST.get('phone')
+        email = request.POST.get('email')
+
+        form = SeminarInscriptionForm({
+            'name': name,
+            'phone': phone,
+            'email': email,
+        })
+
+        if form.errors:
+            return HttpResponseRedirect(request.META['HTTP_REFERER'])
+
+        try:
+            seminar = Seminar.objects.get(id = seminar_id)
+        except ObjectDoesNotExist:
+            raise Http404()
+
+        context = {}
+
         return render(request, self.template_name, context)

@@ -1,0 +1,23 @@
+{% extends "core/base.html" %}
+{% load i18n %}
+{% load static from staticfiles %}
+
+{% block active_seminars_menu %}active{% endblock active_seminars_menu %}
+
+        {% block everything %}
+        <!-- begin #work -->
+        <div id="work" class="content" data-scrollview="true">
+            <!-- begin container -->
+            <div class="container" data-animation="true" data-animation-type="fadeInDown">
+                <h2 class="content-title">{% trans 'Pré-inscrição realizada com sucesso!' %}</h2>
+                <h4 class="content-desc">
+                    {% trans 'Para completar sua inscrição é necessário realizar o pagamento.' %}
+                </h4>
+                <div class="row text-center">
+                    <a href="">Aqui vai o link do PayPal</a>
+                </div>
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #work -->
+        {% endblock everything %}

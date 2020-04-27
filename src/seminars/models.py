@@ -114,3 +114,11 @@ class Seminar(models.Model):
         date = self.start_date.strftime('%d/%m/%y')
         seminar_name = self.seminar_type.name
         return date + ' - ' + seminar_name
+
+
+class SeminarInscription(models.Model):
+    seminar = models.ForeignKey(Seminar, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=30)
+    email = models.EmailField(max_length=100)
+    date = models.DateField(default=timezone.now)

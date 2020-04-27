@@ -40,6 +40,40 @@
                         <input type="button" value="Me inscrever nesta turma!" />
                     </form>
                 </div>
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content form-style">
+                        <span class="close">&times;</span>
+                        <div class="row">
+                            <h3>Venha viver essa mudança conosco!</h3>
+                            <form method="POST" action="{% url 'seminars:inscription' %}">
+                            {% csrf_token %}
+                                <fieldset>
+                                    <h5>Nome:</h5>
+                                    <input type="text" name="name" placeholder="Nome *">
+                                    <div class='row'>
+                                        <div class="col-md-2">
+                                            <h5>DDI:</h5>
+                                            <input type="text" name="ddi" placeholder="DDI *" value="+55">
+                                        </div>
+                                        <div class="col-md-10">
+                                            <h5>Telefone:</h5>
+                                            <input type="text" name="phone" placeholder="Telefone *">
+                                        </div>
+                                    </div>
+                                    <h5>E-mail:</h5>
+                                    <input type="text" name="email" placeholder="E-mail *">
+                                    <input type="hidden" name="seminar" value="{{ seminar.id }}">
+                                </fieldset>
+                                <input type="submit" value="Me inscrever!" />
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
                 {% endblock seminar_inscription %}
 
 
