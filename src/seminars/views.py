@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.core.paginator import Paginator
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404, HttpResponseRedirect
@@ -110,6 +111,8 @@ class SeminarInscription(View):
         phone = request.POST.get('phone')
         email = request.POST.get('email')
 
+        phone = ddi + phone
+
         form = SeminarInscriptionForm({
             'name': name,
             'phone': phone,
@@ -117,6 +120,7 @@ class SeminarInscription(View):
         })
 
         if form.errors:
+            messages.error(request, 'Erro no formulário')
             return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
         try:
@@ -124,6 +128,8 @@ class SeminarInscription(View):
         except ObjectDoesNotExist:
             raise Http404()
 
-        context = {}
+        context = {
+            'seminar': seminar,
+        }
 
         return render(request, self.template_name, context)

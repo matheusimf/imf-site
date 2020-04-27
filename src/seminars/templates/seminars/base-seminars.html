@@ -13,6 +13,17 @@
         <div class="content">
             <!-- begin container -->
             <div class="container">
+                <div class="row text-center" style="margin-top:20px;">
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                            <h3 style="background:#d80000;padding:15px;">{{ message }}</h3>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
                 <h2 class="content-title">{% if seminar_type.modality == 0 %}ThetaHealing®{% elif seminar_type.modality == 1 %}Access Consciousness®{% endif %} {{ seminar_type.name }}</h2>
                 <p class="content-desc">{{ seminar_type.short_description }}</p>
                 <div class="row">

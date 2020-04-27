@@ -108,7 +108,7 @@ class Seminar(models.Model):
     instructors = models.ManyToManyField(Instructor, blank=True)
     date_time_info = models.CharField(max_length=255, blank=True)
     seminar_status = models.IntegerField(choices=STATUS_CHOICES, default=0)
-    inscription_link = models.CharField(max_length=100, blank=True)
+    inscription_link = models.TextField(blank=True)
 
     def __str__(self):
         date = self.start_date.strftime('%d/%m/%y')
