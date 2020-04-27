@@ -13,12 +13,12 @@
         <div class="content">
             <!-- begin container -->
             <div class="container">
-                <div class="row text-center" style="margin-top:20px;">
+                <div class="row text-center">
                     {% if messages %}
                     <ul class="messages">
                         {% for message in messages %}
-                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
-                            <h3 style="background:#d80000;padding:15px;">{{ message }}</h3>
+                        <li>
+                            <h3 {% if message.tags %} class="{{ message.tags }} inscription"{% endif %}>{{ message }}</h3>
                         </li>
                         {% endfor %}
                     </ul>
@@ -26,9 +26,6 @@
                 </div>
                 <h2 class="content-title">{% if seminar_type.modality == 0 %}ThetaHealing®{% elif seminar_type.modality == 1 %}Access Consciousness®{% endif %} {{ seminar_type.name }}</h2>
                 <p class="content-desc">{{ seminar_type.short_description }}</p>
-                <div class="row">
-                    <img class="center-block img-fluid seminar-image" src="{% static seminar_type.image_url %}" alt="{{ seminar_type.name }} - {% if seminar_type.modality == 0 %}ThetaHealing®{% elif seminar_type.modality == 1 %}Access Consciousness®{% endif %}"/>
-                </div>
 
                 {% if seminar_type.url == 'dna-basico' %}
                 <div class="row text-center">

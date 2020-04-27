@@ -1,3 +1,10 @@
+.error.inscription {
+  background:#ffdddd;
+  padding:15px;
+  color:red;
+  margin-top:20px;
+}
+
 .seminar-image {
   width: 260px;
   margin-bottom: 25px;
