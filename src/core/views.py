@@ -4,7 +4,7 @@ from django.views.generic import View
 from seminars.models import Seminar
 
 
-class Home(View):
+class HomeView(View):
     template_name = 'core/home.html'
 
     def get(self, request, *args, **kwargs):
@@ -24,17 +24,17 @@ class Home(View):
         return render(request, self.template_name, context)
 
 
-class AboutUs(Home):
+class AboutUsView(HomeView):
     template_name = 'core/aboutus.html'
 
 
-class Team(Home):
+class TeamView(HomeView):
     template_name = 'core/team.html'
 
 
-class Services(Home):
+class ServicesView(HomeView):
     template_name = 'core/services.html'
 
 
-class Contact(Home):
+class ContactView(HomeView):
     template_name = 'core/contact.html'

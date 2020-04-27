@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path, re_path
 
-from core.views import Home, AboutUs, Team, Services, Contact
+from core.views import (HomeView, AboutUsView, TeamView, ServicesView,
+                        ContactView)
 from core.sitemaps import HomeViewSitemap, StaticViewSitemap
 from seminars.sitemaps import SeminarViewSitemap, SeminarTypeViewSitemap
 
@@ -29,13 +30,13 @@ sitemaps = {
 }
 
 urlpatterns = [
-    re_path(r'^$', Home.as_view(), name='home'),
+    re_path(r'^$', HomeView.as_view(), name='home'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'),
-    path('sobre-nos/', AboutUs.as_view(), name='aboutus'),
-    path('time/', Team.as_view(), name='team'),
-    path('servicos/', Services.as_view(), name='services'),
+    path('sobre-nos/', AboutUsView.as_view(), name='aboutus'),
+    path('time/', TeamView.as_view(), name='team'),
+    path('servicos/', ServicesView.as_view(), name='services'),
     path('cursos/', include(('seminars.urls', 'seminars'))),
-    path('contato/', Contact.as_view(), name='contact'),
+    path('contato/', ContactView.as_view(), name='contact'),
     path('admin/', admin.site.urls),
 ]
