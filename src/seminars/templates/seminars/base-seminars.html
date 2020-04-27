@@ -36,6 +36,8 @@
                 </div>
                 {% endif %}
 
+                {% block post_video_inscription %}{% endblock post_video_inscription %}
+
                 <div class="row">
                     <h4>O curso aborda:</h4>
                     {{ seminar_type.description|linebreaks }}

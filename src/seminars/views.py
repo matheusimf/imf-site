@@ -120,7 +120,7 @@ class SeminarInscription(View):
         })
 
         if form.errors:
-            messages.error(request, 'Erro no formulário')
+            messages.error(request, 'Erro no formulário de inscrição')
             return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
         try:

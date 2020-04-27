@@ -119,6 +119,10 @@
   background: none;
 }
 
+.inscription a {
+  text-decoration: none;
+}
+
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
